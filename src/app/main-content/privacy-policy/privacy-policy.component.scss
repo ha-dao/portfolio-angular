@@ -4,7 +4,15 @@ section {
   min-height: 90vh;
 }
 
-.impressum-container {
+h2, h3, h4 {
+  font-family: 'Fira Code', Arial, sans-serif;
+}
+
+p {
+  font-family: 'Karla', Arial, sans-serif;
+}
+
+.datenschutz-container {
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -44,6 +52,8 @@ section {
     font-size: 1.5rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    border-bottom: 1px solid rgba($primary-green, 0.3);
+    padding-bottom: 0.3rem;
 
     @media (max-width: 480px) {
       font-size: 1.3rem;
@@ -56,6 +66,37 @@ section {
     }
   }
 
+  h3 {
+    color: $primary-green;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 1rem;
+    }
+  }
+
+  h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 0.9rem;
+    }
+  }
+
   p {
     line-height: 1.6;
     margin-bottom: 1rem;
@@ -63,6 +104,20 @@ section {
 
     @media (max-width: 320px) {
       font-size: 0.9rem;
+    }
+  }
+
+  ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+
+      @media (max-width: 320px) {
+        font-size: 0.9rem;
+      }
     }
   }
 

@@ -32,7 +32,7 @@
     <label class="checkbox-container" for="data-privacy-checkbox">
       <input (change)="checkboxChanged()" #privacypolicy="ngModel" [(ngModel)]="contactData.privacypolicy" type="checkbox" id="data-privacy-checkbox" name="privacypolicy" required>
       <div class="checkmark"></div>
-      <span>I've read the <a href="#" class="privacy-policy-link">privacy policy</a> and agree to the processing of my data as outlined.</span>
+      <span>I've read the <a [routerLink]="'/privacy-policy'" class="privacy-policy-link">privacy policy</a> and agree to the processing of my data as outlined.</span>
     </label>
     <p>
       @if ((privacypolicy.invalid && (privacypolicy.dirty || privacypolicy.touched)) || checkboxWasCheckedBefore && !contactData.privacypolicy) {
