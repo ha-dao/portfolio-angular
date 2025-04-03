@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AboutInfo } from '../../interfaces/about-info';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about-me-section',

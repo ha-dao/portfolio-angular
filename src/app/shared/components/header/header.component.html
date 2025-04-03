@@ -3,16 +3,16 @@
     <nav>
       <ul>
         <li class="switch">
-
-            <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
-            <label for="language-toggle"></label>
-            <span class="on">EN</span>
-            <span class="off">DE</span>
-
+          <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
+                 [checked]="isEnglish"
+                 (click)="toggleLanguage()">
+          <label for="language-toggle"></label>
+          <span class="on">EN</span>
+          <span class="off">DE</span>
         </li>
-        <li><a [routerLink]="['/']" [fragment]="'about-me'" class="link-hover-dot-bottom">About me</a></li>
-        <li><a [routerLink]="['/']" [fragment]="'skills'" class="link-hover-dot-bottom">Skills</a></li>
-        <li><a [routerLink]="['/']" [fragment]="'projects'" class="link-hover-dot-bottom">Projects</a></li>
+        <li><a [routerLink]="['/']" [fragment]="'about-me'" class="link-hover-dot-bottom">{{ 'header.about' | translate }}</a></li>
+        <li><a [routerLink]="['/']" [fragment]="'skills'" class="link-hover-dot-bottom">{{ 'header.skills' | translate }}</a></li>
+        <li><a [routerLink]="['/']" [fragment]="'projects'" class="link-hover-dot-bottom">{{ 'header.projects' | translate }}</a></li>
       </ul>
     </nav>
     <img [routerLink]="['/']" [src]="(isHovered ? 'assets/img/1-hero/logo-hover.svg' : 'assets/img/1-hero/logo.svg')" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" alt="logo" id="logo" class="logo">

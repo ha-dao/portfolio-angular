@@ -1,6 +1,22 @@
 {
-  "about-me": {
-    "hello": "hallo {{value}}",
-    "title": "Übersetzung Deutsch"
+  "header": {
+    "about": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte"
+  },
+  "hero": {
+    "h1": "Frontend Entwickler",
+    "bprojects": "Meine Projekte",
+    "bcontact": "Kontakt"
+  },
+  "banner": {
+    "text1": "Offen für Arbeit",
+    "text2": "Für Fernarbeit verfügbar",
+    "text3": "Frontend Entwickler",
+    "text4": "Wohnt in Güstrow"
+  },
+  "skills": {
+    "h2": "Fähigkeiten",
+    "pdescription": "Eine kurze Vorstellung deiner Fähigkeiten. Hebe deine Erfahrung mit verschiedenen Frontend-Technologien hervor und betone deine Offenheit, neue Technologien zu erlernen und dich an sie anzupassen. Zeige, wie wichtig es für dich ist, mit den schnellen Veränderungen in der Webentwicklung Schritt zu halten."
   }
 }

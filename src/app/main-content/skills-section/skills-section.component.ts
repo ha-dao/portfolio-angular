@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skills-section',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './skills-section.component.html',
   styleUrl: './skills-section.component.scss'
 })
@@ -13,10 +14,10 @@ export class SkillsSectionComponent {
   currentImage: string = this.defaultImage;
 
   onMouseOver() {
-    this.currentImage = this.hoverImage; // Bild beim Hover ändern
+    this.currentImage = this.hoverImage;
   }
 
   onMouseLeave() {
-    this.currentImage = this.defaultImage; // Bild zurücksetzen
+    this.currentImage = this.defaultImage;
   }
 }

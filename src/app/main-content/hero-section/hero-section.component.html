@@ -1,13 +1,13 @@
 <section id="hero-section">
   <div class="content-width">
-    <h1>Frontend Developer</h1>
+    <h1>{{ 'hero.h1' | translate }}</h1>
     <span class="name">Ha Dao</span>
     <div class="hero-link-buttons">
-      <a href="#projects" class="link-button animated" data-text="Check my work">
-        <span>Check my work</span>
+      <a [routerLink]="['/']" [fragment]="'projects'" class="link-button animated" data-text="Check my projects">
+        <span>{{ 'hero.bprojects' | translate }}</span>
       </a>
-      <a href="#contact-me" class="link-button animated" data-text="Contact me">
-        <span>Contact me</span>
+      <a [routerLink]="['/']" [fragment]="'contact-me'" class="link-button animated" data-text="Contact me">
+        <span>{{ 'hero.bcontact' | translate }}</span>
       </a>
     </div>
     <div class="left-hero-vertical-content">
@@ -21,6 +21,5 @@
       <span class="hero-right-line"></span>
     </div>
   </div>
-
 </section>
 <app-infinite-banner></app-infinite-banner>

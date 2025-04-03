@@ -1,6 +1,22 @@
 {
-  "app": {
-    "hello": "hello {{value}}",
-    "title": "Translation Demo"
+  "header": {
+    "about": "About me",
+    "skills": "Skills",
+    "projects": "Projects"
+  },
+  "hero": {
+    "h1": "Frontend Developer",
+    "bprojects": "Check my works",
+    "bcontact": "Contact me"
+  },
+  "banner": {
+    "text1": "Open to Work",
+    "text2": "Available for remote work",
+    "text3": "Frontend Developer",
+    "text4": "Based in Güstrow"
+  },
+  "skills": {
+    "h2": "Skill Set",
+    "pdescription": "A short introduction of your skills. Highlight your experience of  using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development."
   }
 }

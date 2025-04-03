@@ -2,13 +2,13 @@
   <div class="banner-scroll" #scrollContainer>
     @for(clone of cloneCount(); track clone) {
       <div class="banner-content">
-        <span class="banner-text">Open to Work</span>
+        <span class="banner-text">{{ 'banner.text1' | translate }}</span>
         <span class="banner-dot"></span>
-        <span class="banner-text">Available for remote work</span>
+        <span class="banner-text">{{ 'banner.text2' | translate }}</span>
         <span class="banner-dot"></span>
-        <span class="banner-text">Frontend Developer</span>
+        <span class="banner-text">{{ 'banner.text3' | translate }}</span>
         <span class="banner-dot"></span>
-        <span class="banner-text">Based in Güstrow</span>
+        <span class="banner-text">{{ 'banner.text4' | translate }}</span>
         <span class="banner-dot"></span>
       </div>
     }

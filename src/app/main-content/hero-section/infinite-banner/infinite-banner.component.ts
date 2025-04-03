@@ -1,8 +1,10 @@
 import { Component, AfterViewInit, ElementRef, ViewChild, signal } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-infinite-banner',
   standalone: true,
+  imports: [TranslatePipe],
   templateUrl: './infinite-banner.component.html',
   styleUrls: ['./infinite-banner.component.scss']
 })
