@@ -15,6 +15,6 @@
         <li><a [routerLink]="['/']" [fragment]="'projects'" class="link-hover-dot-bottom">Projects</a></li>
       </ul>
     </nav>
-    <img [src]="(isHovered ? 'assets/img/1-hero/logo-hover.svg' : 'assets/img/1-hero/logo.svg')" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" alt="logo" id="logo" class="logo">
+    <img [routerLink]="['/']" [src]="(isHovered ? 'assets/img/1-hero/logo-hover.svg' : 'assets/img/1-hero/logo.svg')" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" alt="logo" id="logo" class="logo">
   </div>
 </header>
