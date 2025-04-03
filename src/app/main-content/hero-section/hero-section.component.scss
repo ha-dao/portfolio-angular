@@ -1,0 +1,99 @@
+@import '../../../styles/styles.scss';
+
+#hero-section {
+  font-family: 'Fira Code', 'Karla', Arial, sans-serif;
+  padding: 98px 0 0 0;
+  height: 100vh;
+  @include displayFlex($direction: column, $justify: center, $align: center, $gap: 0);
+  // background: rgb(28,28,28);
+  background: linear-gradient(45deg, rgba(28,28,28,1) 40%, rgba(8,70,59,1) 100%);
+  overflow: hidden;
+
+  div.content-width {
+    position: relative;
+    height: calc(100vh - 98px);
+    @include displayFlex($direction: column, $justify: center, $align: center, $gap: 0);
+    h1 {
+      font-size: 40px;
+    }
+
+    span.name {
+      font-size: 128px;
+      word-spacing: -0.3em;
+    }
+
+    .hero-link-buttons {
+      @include displayFlex($direction: row, $justify: center, $align: center, $gap: 48px);
+    }
+
+    .left-hero-vertical-content {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      @include displayFlex($direction: column, $justify: center, $align: center, $gap: 24px);
+      z-index: 97;
+      img {
+        margin-bottom: 8px;
+        transition: all 400ms ease;
+      }
+      .hero-left-line {
+        width: 1px;
+        height: 300px;
+        background-color: $primary-green;
+        display: block;
+      }
+      &:hover {
+        img {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .right-hero-vertical-content {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      @include displayFlex($direction: column, $justify: center, $align: center, $gap: 24px);
+      z-index: 97;
+      .vertical-text {
+        writing-mode: vertical-rl;
+        transform:scale(-1);
+      }
+
+      a {
+        img {
+          transition: all 300ms ease;
+          &:hover {
+            filter: brightness(0) invert(1);
+            overflow: visible;
+            &::after {
+              content: '•';
+              width: 20px;
+              height: 20px;
+              position: absolute;
+              right: 0;
+              top: 0;
+              color: white;
+            }
+          }
+        }
+      }
+
+      .hero-right-line {
+        width: 1px;
+        height: 300px;
+        background-color: $primary-green;
+        display: block;
+      }
+    }
+  }
+}
+
+app-infinite-banner {
+  z-index: 99;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

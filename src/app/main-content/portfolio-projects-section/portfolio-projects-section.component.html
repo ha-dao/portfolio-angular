@@ -1,0 +1,107 @@
+<section id="projects">
+  <div class="content-width">
+    <h3>Portfolio</h3>
+    <h2>Featured Projects</h2>
+    <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
+
+    <div class="projects-container">
+      <table #projectsTable>
+        <tbody>
+          @for (project of projects; track project.id; let i = $index) {
+            <tr
+              [id]="'project-' + project.id"
+              (mouseenter)="setActiveProject(project.id, $event)"
+              (mouseleave)="clearActiveProject()"
+              (click)="openModal(i)"
+            >
+              <td>
+                {{ project.name }}
+                @if (activeProjectId === project.id) {
+                  <span class="arrow-icon"></span>
+                }
+              </td>
+              <td>
+                @for (tech of project.technologies; track tech; let last = $last) {
+                  {{ tech }}
+                  @if (!last) {
+                    <span class="tech-separator"> | </span>
+                  }
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      @if (activeProjectId && !showModal && hoverPosition !== null) {
+        <div class="projects-hover-content" [style.top.px]="hoverPosition">
+          <figure>
+            <img [src]="getActiveProjectImage()" [alt]="getActiveProjectName() + ' screenshot'">
+          </figure>
+        </div>
+      }
+    </div>
+  </div>
+
+
+  @if (showModal) {
+    <div class="project-modal-overlay">
+      <div class="project-modal-backdrop" (click)="closeModal()"></div>
+
+      <div class="project-modal">
+        <div class="project-modal-content">
+
+          <div class="project-info">
+            <span class="project-number">{{ currentProject.id }}</span>
+            <h2 class="project-title">{{ currentProject.name }}</h2>
+            <p class="project-description">{{ currentProject.description }}</p>
+
+            <div class="project-long-description">
+              <p>{{ currentProject.longDescription }}</p>
+            </div>
+
+            <div class="project-technologies">
+
+              <div class="tech-tags">
+                @for (tech of currentProject.technologies; track tech) {
+                  <span class="tech-tag">
+                    @if (hasTechIcon(tech)) {
+                      <img [src]="getTechIconPath(tech)" class="tech-icon" alt="{{ tech }} icon">
+                    }
+                    {{ tech }}
+                  </span>
+                }
+              </div>
+            </div>
+
+            <div class="project-buttons">
+              <a [href]="currentProject.githubUrl" target="_blank" rel="noopener noreferrer" class="link-button2">
+                GitHub
+              </a>
+              <a [href]="currentProject.liveUrl" target="_blank" rel="noopener noreferrer" class="link-button2">
+                Live Test
+              </a>
+            </div>
+          </div>
+
+          <div class="project-image-container">
+
+            <button class="close-button" (click)="closeModal()">
+              <span class="close-icon"></span>
+            </button>
+
+            <div class="project-image">
+              <img [src]="currentProject.imageUrl" [alt]="currentProject.name + ' screenshot'">
+            </div>
+          </div>
+        </div>
+
+        <div class="project-modal-footer">
+          <button class="next-project-button" (click)="goToNextProject()">
+            Next Project
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</section>

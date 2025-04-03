@@ -1,0 +1,63 @@
+@import '../../../../styles/styles.scss';
+
+.card-container {
+  padding: 24px;
+  height: 100%;
+  border: 1px solid rgba(61, 207, 182, 0.5);
+  background-color: rgba(61, 207, 182, 0.05);
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 40px;
+
+  &.active {
+    border-color: rgba(61, 207, 182, 1);
+    background-color: rgba(61, 207, 182, 0.3);
+  }
+
+  p {
+    font-family: 'Karla';
+    font-size: 20px;
+    color: white;
+    overflow-y: auto;
+    margin-bottom: 16px;
+    max-height: 96px;
+    text-align: left;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: #ffffff33;
+      border-radius: 16px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #3DCFB6;
+      border-radius: 16px;
+    }
+  }
+
+  &.active p {
+    max-height: 130px;
+  }
+
+  .author-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+
+    .divider-line {
+      height: 1px;
+      background-color: #ffffff;
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    span {
+      font-family: 'Karla';
+      color: #ffffff;
+      font-size: 18px;
+    }
+  }
+}

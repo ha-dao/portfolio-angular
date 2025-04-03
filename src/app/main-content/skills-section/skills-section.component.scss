@@ -1,0 +1,155 @@
+@import '../../../styles/styles.scss';
+
+#skills {
+  background-image: radial-gradient(circle closest-corner at 0px 50%, #08463b 0%, #1C1C1C 100%);
+  background-image: -webkit-radial-gradient(circle closest-corner at 0px 50%, #08463b 0%, #1C1C1C 100%);
+  background-image: -moz-radial-gradient(circle closest-corner at 0px 50%, #08463b 0%, #1C1C1C 100%);
+  .content-width {
+    @include displayFlex($direction: row, $justify: center, $align: center, $gap: 96px);
+    min-height: 50vh;
+  }
+}
+
+.skills-img-box {
+  padding: 0;
+  flex: 1;
+  align-self: flex-start;
+  width: 100%;
+  height: 568px;
+  margin-top: 40px;
+  @include displayFlex($direction: row, $justify: flex-start, $align: center, $gap: 0 72px);
+  flex-wrap: wrap;
+  figure {
+    flex: 1 1 1 1;
+    width: 104px;
+    height: 116px;
+    @include displayFlex($direction: column, $justify: flex-start, $align: center, $gap: 8px);
+    img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      transition: all 300ms ease;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.figure-container {
+  position: relative;
+  width: 104px;
+  height: 116px;
+
+  transition: transform 0.3s ease;
+  @include displayFlex($direction: column, $justify: flex-start, $align: center, $gap: 0);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+
+    .tooltip {
+      opacity: 1;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -50px;
+        border-width: 8px;
+        border-style: solid;
+        border-color: #ffffff transparent transparent transparent;
+      }
+    }
+
+    .figcaption {
+      color: $primary-green;
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  width: 250px;
+  transform: translateX(-33%);
+  background: #ffffff;
+  color: $primary-green;
+  padding: 16px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: wrap;
+  z-index: 10;
+  div {
+    width: 100%;
+    img {
+      margin: 12px 0;
+      width: 100%;
+      height: 40px;
+      object-fit: contain;
+    }
+  }
+
+}
+
+.skills-text-box {
+  @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 0);
+  text-align: left;
+  align-self: flex-start;
+  flex: 1;
+  width: 100%;
+  font-family: 'Karla';
+  >p {
+    margin-bottom: 16px;
+    color: $primary-green;
+    font-size: 24px;
+    font-weight: medium;
+  }
+  >article {
+    @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 16px);
+    max-width: 100%;
+    min-height: 568px;
+    border-radius: 30px;
+    border: 1px solid $primary-green;
+    padding: 32px;
+    background-color: #3DCFB610;
+    backdrop-filter: blur(4px);
+    >h2 {
+      color: $primary-green;
+      font-family: 'Fira Code';
+      font-weight: bold;
+      font-size: 64px;
+    }
+
+    article {
+      @include displayFlex($direction: column, $justify: space-between, $align: flex-start, $gap: 24px);
+      width: 350px;
+      margin: 24px 0;
+      padding: 0;
+      h3 {
+        font-family: 'Fira Code';
+        font-size: 24px;
+        font-weight: 900;
+        span {
+          color: $primary-green;
+        }
+      }
+    }
+    p {
+      font-size: 18px;
+      font-weight: 200;
+    }
+  }
+}

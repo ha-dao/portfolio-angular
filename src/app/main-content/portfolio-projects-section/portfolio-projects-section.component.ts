@@ -1,0 +1,79 @@
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ProjectService } from '../../services/project.service';
+import { Project } from '../../interfaces/project';
+import { TechIconService } from '../../services/tech-icons.service';
+
+@Component({
+  selector: 'app-portfolio-projects-section',
+  standalone: true,
+  imports: [],
+  templateUrl: './portfolio-projects-section.component.html',
+  styleUrl: './portfolio-projects-section.component.scss'
+})
+export class PortfolioProjectsSectionComponent implements OnInit {
+  @ViewChild('projectsTable') projectsTable!: ElementRef;
+
+  projects: Project[] = [];
+  activeProjectId: string | null = null;
+  hoverPosition: number | null = null;
+  showModal = false;
+  currentProjectIndex = 0;
+
+  constructor(private projectService: ProjectService, private techIconService: TechIconService) {}
+
+  ngOnInit(): void {
+    this.projects = this.projectService.getAllProjects();
+  }
+
+  setActiveProject(projectId: string, event: MouseEvent): void {
+    this.activeProjectId = projectId;
+
+    const trElement = (event.currentTarget as HTMLElement);
+    const tableRect = this.projectsTable.nativeElement.getBoundingClientRect();
+    const trRect = trElement.getBoundingClientRect();
+
+    this.hoverPosition = trRect.top - tableRect.top + (trRect.height / 2) - 100;
+  }
+
+  clearActiveProject(): void {
+    this.activeProjectId = null;
+    this.hoverPosition = null;
+  }
+
+  openModal(index: number): void {
+    this.currentProjectIndex = index;
+    this.showModal = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal(): void {
+    this.showModal = false;
+    document.body.style.overflow = 'auto';
+  }
+
+  goToNextProject(): void {
+    this.currentProjectIndex = (this.currentProjectIndex + 1) % this.projects.length;
+  }
+
+  get currentProject(): Project {
+    return this.projects[this.currentProjectIndex];
+  }
+
+  getActiveProjectImage(): string {
+    const project = this.projects.find(p => p.id === this.activeProjectId);
+    return project ? project.imageUrl : '';
+  }
+
+  getActiveProjectName(): string {
+    const project = this.projects.find(p => p.id === this.activeProjectId);
+    return project ? project.name : '';
+  }
+
+  hasTechIcon(technology: string): boolean {
+    return this.techIconService.hasTechIcon(technology);
+  }
+
+  getTechIconPath(technology: string): string | null {
+    return this.techIconService.getIconPath(technology);
+  }
+}

@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import './fonts.scss';
+@import './variables.scss';
+@import './mixins.scss';
+@import './buttons.scss';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body, li, a {
+  font-family: 'Fira Code';
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+
+a {
+  font-family: 'Fira Code', 'Karla', Arial, sans-serif;
+  color: inherit;
+  text-decoration: none;
+  background-color: inherit;
+  transition: all 300ms ease;
+  &:hover {
+    color: $primary-green;
+  }
+}
+
+section {
+  width: 100%;
+  height: auto;
+  padding: 144px 0;
+}
+
+.content-width {
+  width: 1440px;
+  text-align: center;
+  margin: 0 auto;
+}

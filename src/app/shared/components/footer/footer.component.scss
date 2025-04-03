@@ -1,0 +1,24 @@
+@import '../../../../styles/styles.scss';
+
+footer {
+  padding: 40px 0;
+  div {
+    @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 0);
+    .f-content1 {
+      @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 32px);
+      div {
+        @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
+      }
+    }
+
+    .f-content3 {
+      @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
+    }
+  }
+}
+
+
+.footer-logo {
+  width: auto;
+  height: 50px;
+}

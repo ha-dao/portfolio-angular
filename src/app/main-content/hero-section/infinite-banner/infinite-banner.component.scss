@@ -1,0 +1,42 @@
+@import '../../../../styles/styles.scss';
+
+.banner-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff12;
+  padding: 15px 0;
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: -50px;
+  transform: rotate(-4deg);
+  backdrop-filter: blur(4px);
+}
+
+.banner-scroll {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+}
+
+.banner-text {
+  font-family: 'Karla', Arial, Helvetica, sans-serif;
+  margin: 0 15px;
+  font-size: 32px;
+  font-weight: 200;
+  color: $primary-green;
+}
+
+.banner-dot {
+  width: 6px;
+  height: 6px;
+  background-color: $primary-green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 56px;
+  margin-right: 56px;
+}

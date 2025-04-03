@@ -1,0 +1,46 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <div>
+    <hr class="top-hr">
+    <label for="name" class="basic-label">What's your name?
+    <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name goes here" required>
+    </label>
+    <p>
+      @if (!name.valid && name.touched && !name.disabled) {
+        <span class="alert-text">Please enter your name</span>
+      }
+    </p>
+    <hr>
+    <label for="email" class="basic-label">What's your email?
+    <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="youremail@email.com" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+    </label>
+    <p>
+      @if (!email.valid && email.touched && !email.disabled) {
+        <span class="alert-text">Please enter your email adress</span>
+      }
+    </p>
+    <hr>
+    <label for="message" class="basic-label">How can I help you?
+    <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Hello Ha, I am intrested in..." required rows="1" cols="50"></textarea>
+    </label>
+    <p>
+      @if (!message.valid && message.touched && !message.disabled) {
+        <span class="alert-text">Please enter a message</span>
+      }
+    </p>
+    <hr>
+    <label class="checkbox-container" for="data-privacy-checkbox">
+      <input (change)="checkboxChanged()" #privacypolicy="ngModel" [(ngModel)]="contactData.privacypolicy" type="checkbox" id="data-privacy-checkbox" name="privacypolicy" required>
+      <div class="checkmark"></div>
+      <span>I've read the <a href="#" class="privacy-policy-link">privacy policy</a> and agree to the processing of my data as outlined.</span>
+    </label>
+    <p>
+      @if ((privacypolicy.invalid && (privacypolicy.dirty || privacypolicy.touched)) || checkboxWasCheckedBefore && !contactData.privacypolicy) {
+        <span class="alert-text">Please accept the privacy policy.</span>
+      }
+    </p>
+    </div>
+    <input type="submit" value="Say Hello ;&#41;" [disabled]="!contactForm.form.valid">
+
+  </form>
+</div>

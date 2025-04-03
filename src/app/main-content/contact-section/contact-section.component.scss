@@ -1,0 +1,39 @@
+@import '../../../styles/styles.scss';
+
+.content-width {
+  display: flex;
+  article {
+    flex: 1 1 50%;
+    text-align: left;
+    padding-right: 112px;
+    >h3 {
+      font-family: 'Karla';
+      font-size: 24px;
+      color: $primary-green;
+    }
+    >h2 {
+      font-family: 'Fira Code';
+      font-size: 64px;
+      color: $primary-green;
+      line-height: 1em;
+      margin: 20px 0 40px 0;
+    }
+    >h4 {
+      font-family: 'Fira Code';
+      font-size: 24px;
+      color: $primary-green;
+    }
+    p {
+      font-family: 'Karla';
+      font-size: 16px;
+      margin: 16px 0;
+      span {
+        color: $primary-green;
+        font-weight: 700;
+      }
+    }
+  }
+  app-contact-form {
+    flex: 1 1 50%;
+  }
+}

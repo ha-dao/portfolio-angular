@@ -1,0 +1,176 @@
+.link-button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  padding: 16px 24px;
+  border-radius: 32px;
+  color: white;
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: $primary-green;
+  }
+
+  &.animated {
+    min-width: 120px;
+
+    span {
+      position: relative;
+      z-index: 1;
+      transition: opacity 0.2s;
+    }
+
+    &:hover span {
+      opacity: 0;
+    }
+
+    &::before,
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      white-space: nowrap;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &::before {
+      animation: moveText1 2s linear infinite;
+    }
+
+    &::after {
+      animation: moveText2 2s linear infinite;
+    }
+  }
+}
+
+@keyframes moveText1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes moveText2 {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+.link-hover-dot-bottom {
+  position: relative;
+  text-decoration: none;
+  transition: all 300ms ease;
+  color: inherit;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 6px;
+    height: 6px;
+    background-color: $primary-green;
+    border-radius: 50%;
+  }
+  &:hover {
+    &::after {
+      transform: translateY(-50%) scale(1);
+    }
+  }
+}
+
+.link-hover-dot-right {
+  position: relative;
+  text-decoration: none;
+  transition: all 300ms ease;
+  color: inherit;
+  &::after {
+    content: '';
+    position: absolute;
+    right: -14px;
+    top: 45%;
+    transform: translateY(-50%) scale(0);
+    width: 6px;
+    height: 6px;
+    background-color: $primary-green;
+    border-radius: 50%;
+  }
+  &:hover {
+    &::after {
+      transform: translateY(-50%) scale(1);
+    }
+  }
+}
+
+.link-hover-dot-left {
+  position: relative;
+  text-decoration: none;
+  transition: all 300ms ease;
+  color: inherit;
+  &::after {
+    content: '';
+    position: absolute;
+    left: -14px;
+    top: 45%;
+    transform: translateY(-50%) scale(0);
+    width: 6px;
+    height: 6px;
+    background-color: $primary-green;
+    border-radius: 50%;
+  }
+  &:hover {
+    &::after {
+      transform: translateY(-50%) scale(1);
+    }
+  }
+}
+
+.link-button2 {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  padding: 16px 24px;
+  border-radius: 32px;
+  color: white;
+  text-decoration: none;
+
+  &::before {
+    content: attr(data-text);
+    margin-right: 8px;
+  }
+
+  &::after {
+    content: '';
+    background-image: url('../assets/img/4-projects/arrow_outward.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 12px;
+    filter: invert(70%) sepia(66%) saturate(210%) hue-rotate(117deg) brightness(200%) contrast(100%);
+    margin-left: 8px;
+    transition: all 300ms ease;
+  }
+
+  &:hover {
+    border: 1px solid $primary-green;
+
+    &::after {
+      transform: translate(4px, -4px);
+    }
+  }
+}
