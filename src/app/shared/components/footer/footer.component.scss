@@ -2,25 +2,34 @@
 
 footer {
   padding: 40px 0;
-  div {
-    @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 0);
-    text-align: left;
-    .f-content1 {
-      @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 24px);
-      div {
-        @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 8px);
-      }
-    }
 
-    .f-content2 {
-      p {
-        color: $primary-green;
-      }
-    }
+  .content-width {
+    width: 100%;
+  }
 
-    .f-content3 {
-      @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .f-content1 {
+    @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 24px);
+
+    div {
+      @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 8px);
     }
+  }
+
+  .f-content2 {
+    p {
+      color: $primary-green;
+      text-align: center;
+    }
+  }
+
+  .f-content3 {
+    @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
   }
 }
 
@@ -30,79 +39,56 @@ footer {
 }
 
 /* Media Queries */
-@media (max-width: 1440px) {
-
-}
-
-@media (max-width: 1200px) {
-
-}
-
 @media (max-width: 768px) {
   footer {
-    padding: 40px 0;
-    div {
-      @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 40px);
-      .f-content1 {
-        @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 32px);
-        div {
-          @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
-        }
-      }
+    .footer-container {
+      flex-wrap: wrap;
+      row-gap: 32px;
+    }
 
-      .f-content2 {
-        align-self: flex-end;
-      }
+    .f-content1 {
+      width: 40%;
+      order: 1;
+    }
 
-      .f-content3 {
-        @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
+    .f-content3 {
+      width: 40%;
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .f-content2 {
+      width: 100%;
+      order: 3;
+
+      p {
+        text-align: center;
       }
     }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   footer {
-    padding: 40px 0;
-    div {
-      @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 40px);
-      .f-content1 {
-        width: 50%;
-        div {
-          width: 100%;
-        }
-      }
-
-      .f-content2 {
-        width: 100%;
-      }
-
-      .f-content3 {
-        width: 50%;
-      }
+    .f-content1 {
+      text-align: left;
     }
-  }
-}
 
+    .f-content1, .f-content3 {
+      width: 44%;
+    }
 
-@media (max-width: 320px) {
-  footer {
-    padding: 40px 0;
-    div {
-      @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 40px);
-      .f-content1 {
-        @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 32px);
-        div {
-          @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
-        }
-      }
+    .f-content3 {
+      margin-top: 16px;
+    }
 
-      .f-content2 {
-        align-self: flex-end;
-      }
+    .f-content2 {
+      margin-top: 24px;
 
-      .f-content3 {
-        @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
+      p {
+        text-align: center;
       }
     }
   }
