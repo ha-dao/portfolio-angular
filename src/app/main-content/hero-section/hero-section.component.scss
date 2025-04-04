@@ -96,3 +96,9 @@ app-infinite-banner {
   left: 0;
   right: 0;
 }
+
+@media (max-width: 1440px) {
+  .content-width {
+    width: 100%;
+  }
+}

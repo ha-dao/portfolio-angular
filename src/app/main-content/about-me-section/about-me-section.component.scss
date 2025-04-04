@@ -3,8 +3,7 @@
 #about-me {
   width: 100%;
   .content-width {
-    @include displayFlex($direction: row, $justify: center, $align: center, $gap: 96px);
-    min-height: 50vh;
+    @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 80px);
   }
 }
 
@@ -14,20 +13,21 @@
   background-position: center center;
   background-size: cover;
   padding: 0;
-  flex: 1;
   align-self: flex-start;
-
   border-radius: 40px;
-  width: 568px;
-  height: 568px;
+  width: 50%;
+  height: 500px;
+  aspect-ratio: 1/1;
+
   img {
     width: 100%;
     height: 100%;
     border-radius: 40px;
     object-fit: cover;
+    object-position: top center;
     transition: all 300ms ease;
     &:hover {
-      transform: translate(30px, -30px);
+      transform: translate(25px, -25px);
     }
   }
 }
@@ -36,43 +36,175 @@
   @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 0);
   text-align: left;
   align-self: flex-end;
-  flex: 1;
-  width: 100%;
-
+  width: 50%;
+  margin-bottom: -140px;
   font-family: 'Karla';
   >p {
     margin-bottom: 16px;
     color: $primary-green;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: medium;
   }
   >article {
     @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 16px);
-    max-width: 100%;
-    min-height: 568px;
+    width: 100%;
     border-radius: 30px;
     border: 1px solid $primary-green;
-    padding: 32px;
+    padding: 48px 40px;
     background-color: #3DCFB610;
     >h2 {
       color: $primary-green;
       font-family: 'Fira Code';
       font-weight: bold;
-      font-size: 64px;
+      font-size: 48px;
     }
     >p {
       margin: 0 0 24px 0;
     }
     article {
-      @include displayFlex($direction: row, $justify: flex-start, $align: flex-start, $gap: 24px);
+      @include displayFlex($direction: row, $justify: flex-start, $align: flex-start, $gap: 16px);
       img {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
       }
     }
     p {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 200;
+    }
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1440px) {
+  .content-width {
+    padding: 0 24px;
+  }
+
+  #about-me {
+    .content-width {
+      @include displayFlex($direction: column, $justify: center, $align: center, $gap: 40px);
+    }
+  }
+
+  .about-img-box {
+    width: 100%;
+  }
+
+  .about-me-text-box {
+    margin-top: 0;
+    width: 100%;
+    >article {
+      >h2 {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .about-img-box {
+    img {
+      &:hover {
+        transform: translate(10px, -10px);
+      }
+    }
+  }
+
+  .about-me-text-box {
+    >p {
+      font-size: 18px;
+    }
+    >article {
+      padding: 20px;
+      >h2 {
+        font-size: 32px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 40px 0;
+  }
+
+  .content-width {
+    padding: 0 16px;
+  }
+
+  .about-img-box {
+    border-radius: 24px;
+    height: 300px;
+    img {
+      border-radius: 24px;
+      &:hover {
+        transform: translate(8px, -8px);
+      }
+    }
+  }
+
+  .about-me-text-box {
+    >p {
+      font-size: 16px;
+    }
+    >article {
+      padding: 16px;
+      border-radius: 20px;
+      >h2 {
+        font-size: 28px;
+      }
+      >p {
+        margin: 0 0 16px 0;
+      }
+      article {
+        @include displayFlex($direction: row, $justify: flex-start, $align: flex-start, $gap: 12px);
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* Speziell für sehr kleine Geräte (320px) */
+@media (max-width: 320px) {
+  .about-img-box {
+    max-width: 100%;
+
+    img {
+      &:hover {
+        transform: translate(5px, -5px);
+      }
+    }
+  }
+
+  .about-me-text-box {
+    >article {
+      >h2 {
+        font-size: 24px;
+      }
+      article {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 16px;
+
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
     }
   }
 }
