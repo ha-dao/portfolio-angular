@@ -14,7 +14,7 @@ export class ProjectService {
       technologies: ['Firebase', 'Angular', 'Typescript', 'HTML', 'CSS'],
       imageUrl: 'assets/img/4-projects/join-screenshot.png',
       liveUrl: 'https://join-example.com',
-      githubUrl: 'https://github.com/example/join'
+      githubUrl: 'https://github.com/ha-dao'
     },
     {
       id: '02',
@@ -24,7 +24,7 @@ export class ProjectService {
       technologies: ['HTML', 'CSS', 'Javascript'],
       imageUrl: 'assets/img/4-projects/el-pollo-locco-screenshot.png',
       liveUrl: 'https://el-pollo-locco-example.com',
-      githubUrl: 'https://github.com/example/el-pollo-locco'
+      githubUrl: 'https://github.com/ha-dao/el-pollo-locco'
     },
     {
       id: '03',
@@ -34,7 +34,7 @@ export class ProjectService {
       technologies: ['Angular', 'Firebase', 'Typescript'],
       imageUrl: 'assets/img/4-projects/da-bubble-screenshot.png',
       liveUrl: 'https://da-bubble-example.com',
-      githubUrl: 'https://github.com/example/da-bubble'
+      githubUrl: 'https://github.com/ha-dao'
     }
   ];
 
