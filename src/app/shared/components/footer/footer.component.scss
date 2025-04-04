@@ -4,10 +4,17 @@ footer {
   padding: 40px 0;
   div {
     @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 0);
+    text-align: left;
     .f-content1 {
-      @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 32px);
+      @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 24px);
       div {
-        @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
+        @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 8px);
+      }
+    }
+
+    .f-content2 {
+      p {
+        color: $primary-green;
       }
     }
 
@@ -17,8 +24,86 @@ footer {
   }
 }
 
-
 .footer-logo {
   width: auto;
   height: 50px;
+}
+
+/* Media Queries */
+@media (max-width: 1440px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 0;
+    div {
+      @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 40px);
+      .f-content1 {
+        @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 32px);
+        div {
+          @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
+        }
+      }
+
+      .f-content2 {
+        align-self: flex-end;
+      }
+
+      .f-content3 {
+        @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 0;
+    div {
+      @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 40px);
+      .f-content1 {
+        width: 50%;
+        div {
+          width: 100%;
+        }
+      }
+
+      .f-content2 {
+        width: 100%;
+      }
+
+      .f-content3 {
+        width: 50%;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 320px) {
+  footer {
+    padding: 40px 0;
+    div {
+      @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 40px);
+      .f-content1 {
+        @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 32px);
+        div {
+          @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
+        }
+      }
+
+      .f-content2 {
+        align-self: flex-end;
+      }
+
+      .f-content3 {
+        @include displayFlex($direction: column, $justify: flex-end, $align: flex-start, $gap: 8px);
+      }
+    }
+  }
 }

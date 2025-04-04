@@ -61,3 +61,12 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .card-container {
+    padding: 24px;
+    &.active {
+      backdrop-filter: blur(10px);
+    }
+}
+}

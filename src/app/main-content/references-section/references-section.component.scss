@@ -159,7 +159,7 @@ h3 {
   }
 
   .testimonial-slot {
-    width: 70%;
+    width: 90%;
 
     &.prev-slot {
       left: 0;
@@ -183,5 +183,27 @@ h3 {
   .indicator {
     width: 10px;
     height: 10px;
+  }
+
+  #quotes-icon {
+    width: 64px;
+    height: 64px;
+    top: -32px;
+    left: 0;
+  }
+
+  .gradient-overlay {
+    height: 100%;
+    width: 2%;
+
+    &.left {
+      left: 0;
+      background: transparent;
+    }
+
+    &.right {
+      right: 0;
+      background: transparent;
+    }
   }
 }

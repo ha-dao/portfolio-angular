@@ -5,8 +5,8 @@
   background-image: -webkit-radial-gradient(circle closest-corner at 0px 50%, #08463b 0%, #1C1C1C 100%);
   background-image: -moz-radial-gradient(circle closest-corner at 0px 50%, #08463b 0%, #1C1C1C 100%);
   .content-width {
-    @include displayFlex($direction: row, $justify: center, $align: center, $gap: 96px);
-    min-height: 50vh;
+    @include displayFlex($direction: row, $justify: center, $align: flex-start, $gap: 96px);
+    padding: 100px 16px;
   }
 }
 
@@ -15,21 +15,25 @@
   flex: 1;
   align-self: flex-start;
   width: 100%;
-  height: 568px;
+  max-height: 568px;
   margin-top: 40px;
-  @include displayFlex($direction: row, $justify: flex-start, $align: center, $gap: 0 72px);
+  @include displayFlex($direction: row, $justify: flex-start, $align: center, $gap: 40px);
   flex-wrap: wrap;
+
   figure {
-    flex: 1 1 1 1;
+    flex: 0 0 auto;
     width: 104px;
     height: 116px;
+    margin-bottom: 16px;
     @include displayFlex($direction: column, $justify: flex-start, $align: center, $gap: 8px);
+
     img {
       width: 64px;
       height: 64px;
       object-fit: cover;
       transition: all 300ms ease;
     }
+
     &:hover {
       img {
         transform: scale(1.1);
@@ -42,13 +46,12 @@
   position: relative;
   width: 104px;
   height: 116px;
-
   transition: transform 0.3s ease;
   @include displayFlex($direction: column, $justify: flex-start, $align: center, $gap: 0);
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 64px;
+    height: 64px;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
@@ -60,12 +63,14 @@
 
     .tooltip {
       opacity: 1;
+      visibility: visible;
+
       &::after {
         content: "";
         position: absolute;
         top: 100%;
         left: 50%;
-        margin-left: -50px;
+        margin-left: -8px;
         border-width: 8px;
         border-style: solid;
         border-color: #ffffff transparent transparent transparent;
@@ -80,18 +85,20 @@
 
 .tooltip {
   position: absolute;
-  top: -150px;
+  bottom: 120px;
   left: 50%;
-  width: 250px;
-  transform: translateX(-33%);
+  width: 220px;
+  transform: translateX(-50%);
   background: #ffffff;
   color: $primary-green;
   padding: 16px;
   border-radius: 4px;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  white-space: wrap;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 10;
+  text-align: center;
+
   div {
     width: 100%;
     img {
@@ -101,7 +108,6 @@
       object-fit: contain;
     }
   }
-
 }
 
 .skills-text-box {
@@ -111,45 +117,303 @@
   flex: 1;
   width: 100%;
   font-family: 'Karla';
-  >p {
+
+  > p {
     margin-bottom: 16px;
     color: $primary-green;
     font-size: 24px;
     font-weight: medium;
   }
-  >article {
+
+  > article {
     @include displayFlex($direction: column, $justify: flex-start, $align: flex-start, $gap: 16px);
-    max-width: 100%;
-    min-height: 568px;
+    width: 100%;
+    min-height: auto;
     border-radius: 30px;
     border: 1px solid $primary-green;
     padding: 32px;
     background-color: #3DCFB610;
     backdrop-filter: blur(4px);
-    >h2 {
+
+    > h2 {
       color: $primary-green;
       font-family: 'Fira Code';
       font-weight: bold;
-      font-size: 64px;
+      font-size: clamp(36px, 5vw, 64px);
     }
 
     article {
       @include displayFlex($direction: column, $justify: space-between, $align: flex-start, $gap: 24px);
-      width: 350px;
+      width: 100%;
+      max-width: 350px;
       margin: 24px 0;
       padding: 0;
+
       h3 {
         font-family: 'Fira Code';
-        font-size: 24px;
+        font-size: clamp(18px, 3vw, 24px);
         font-weight: 900;
+
         span {
           color: $primary-green;
         }
       }
     }
+
     p {
-      font-size: 18px;
+      font-size: clamp(16px, 2vw, 18px);
       font-weight: 200;
+    }
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1440px) {
+  #skills {
+    .content-width {
+      @include displayFlex($direction: column, $justify: center, $align: center, $gap: 40px);
+      padding: 80px 0 0 0;
+    }
+  }
+
+  .skills-text-box {
+    width: 100%;
+    max-width: 100%;
+
+    > article {
+      min-height: auto;
+      padding: 24px;
+    }
+  }
+
+  .skills-img-box {
+    justify-content: center;
+    gap: 16px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  #skills {
+    .content-width {
+      gap: 32px;
+    }
+  }
+
+  .skills-text-box {
+    > p {
+      font-size: 20px;
+    }
+
+    > article {
+      padding: 20px;
+
+      > h2 {
+        font-size: 36px;
+      }
+
+      article {
+        margin: 16px 0;
+        gap: 16px;
+
+        h3 {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .skills-img-box {
+    margin-top: 16px;
+    gap: 12px 24px;
+
+    figure {
+      width: 90px;
+      height: 100px;
+      margin-bottom: 8px;
+
+      img {
+        width: 48px;
+        height: 48px;
+      }
+
+      figcaption {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .figure-container {
+    width: 90px;
+    height: 100px;
+
+    img {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  .tooltip {
+    width: 180px;
+    padding: 12px;
+    bottom: 110px;
+
+    p {
+      font-size: 14px;
+    }
+
+    div img {
+      height: 30px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-text-box {
+    > p {
+      font-size: 18px;
+    }
+
+    > article {
+      padding: 16px;
+      border-radius: 20px;
+
+      > h2 {
+        font-size: 30px;
+      }
+
+      article {
+        h3 {
+          font-size: 18px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .skills-img-box {
+    gap: 8px 16px;
+
+    figure {
+      width: 70px;
+      height: 80px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+
+      figcaption {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .figure-container {
+    width: 70px;
+    height: 80px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .tooltip {
+    width: 160px;
+    padding: 10px;
+    bottom: 85px;
+
+    p {
+      font-size: 12px;
+    }
+
+    div img {
+      height: 24px;
+    }
+  }
+}
+
+/* Für sehr kleine Bildschirme (320px) */
+@media (max-width: 320px) {
+  #skills {
+    .content-width {
+      padding: 80px 0;
+    }
+  }
+
+  .skills-text-box {
+    > p {
+      font-size: 16px;
+    }
+
+    > article {
+      padding: 12px;
+
+      > h2 {
+        font-size: 24px;
+      }
+
+      article {
+        gap: 12px;
+
+        h3 {
+          font-size: 16px;
+        }
+      }
+
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .skills-img-box {
+    gap: 4px 12px;
+
+    figure {
+      width: 60px;
+      height: 70px;
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+
+      figcaption {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .figure-container {
+    width: 60px;
+    height: 70px;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .tooltip {
+    width: 140px;
+    padding: 8px;
+    bottom: 75px;
+
+    p {
+      font-size: 11px;
+    }
+
+    div img {
+      height: 20px;
+      margin: 6px 0;
     }
   }
 }

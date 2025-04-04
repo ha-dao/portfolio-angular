@@ -37,3 +37,41 @@
     flex: 1 1 50%;
   }
 }
+
+/* Media Queries */
+@media (max-width: 1440px) {
+  .content-width {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 768px) {
+  .content-width {
+    padding: 0;
+    article {
+      padding-right: 0;
+      >h3 {
+        font-size: 18px;
+      }
+      >h2 {
+        font-size: 40px;
+        line-height: 1em;
+      }
+      >h4 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .content-width {
+    article {
+      padding-right: 0;
+    }
+  }
+}

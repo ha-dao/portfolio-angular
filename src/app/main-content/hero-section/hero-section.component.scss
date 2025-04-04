@@ -2,13 +2,13 @@
 
 #hero-section {
   font-family: 'Fira Code', 'Karla', Arial, sans-serif;
-  padding: 98px 0 0 0;
+  padding: 98px 16px 0 16px;
   height: 100vh;
   @include displayFlex($direction: column, $justify: center, $align: center, $gap: 0);
   background: linear-gradient(45deg, rgba(28,28,28,1) 40%, rgba(8,70,59,1) 100%);
   overflow: hidden;
 
-  div.content-width {
+  .content-width {
     position: relative;
     height: calc(100vh - 98px);
     @include displayFlex($direction: column, $justify: center, $align: center, $gap: 0);
@@ -102,3 +102,50 @@ app-infinite-banner {
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  #hero-section {
+    .content-width {
+      h1 {
+        font-size: 24px;
+      }
+      span.name {
+        font-size: 80px;
+        word-spacing: -0.3em;
+      }
+      .hero-link-buttons {
+        gap: 16px;
+      }
+
+      .left-hero-vertical-content {
+        .hero-left-line {
+          height: 150px;
+        }
+      }
+
+      .right-hero-vertical-content {
+        .hero-right-line {
+          height: 150px;
+        }
+      }
+    }
+    }
+  }
+
+  @media (max-width: 320px) {
+    #hero-section {
+      .content-width {
+        h1 {
+          font-size: 18px;
+        }
+        span.name {
+          font-size: 64px;
+          word-spacing: -0.3em;
+        }
+        .hero-link-buttons {
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+      }
+  }

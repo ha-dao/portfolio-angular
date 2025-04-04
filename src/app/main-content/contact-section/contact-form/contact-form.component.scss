@@ -146,7 +146,7 @@ label.basic-label {
 	user-select: none;
   gap: 16px;
 	.checkmark {
-    display: inline-flex;
+    display: inline-block;
     width: 20px;
     height: 20px;
 		&:after {
@@ -197,4 +197,46 @@ label.basic-label {
 
 .error-input {
   border-color: $alert-text;
+}
+
+
+/* Media Queries */
+@media (max-width: 1440px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
+  .checkbox-container {
+    display: inline-block;
+    .checkmark {
+      display: inline-block;
+      margin-right: 16px;
+      vertical-align: middle;
+    }
+  }
+
+  label.basic-label {
+    padding: 0 16px;
+    font-size: 16px;
+  }
+
+  input[type=text], input[type=email], textarea {
+    padding: 0 16px;
+  }
+
+  .alert-text {
+    padding: 0;
+  }
+}
+
+@media (max-width: 320px) {
+
 }
