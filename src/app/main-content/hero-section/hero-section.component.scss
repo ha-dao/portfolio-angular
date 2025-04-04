@@ -78,6 +78,14 @@
         }
       }
 
+      .email-link {
+        position: relative;
+
+        .email-icon {
+          display: none;
+        }
+      }
+
       .hero-right-line {
         width: 1px;
         height: 300px;
@@ -127,25 +135,38 @@ app-infinite-banner {
         .hero-right-line {
           height: 150px;
         }
-      }
-    }
-    }
-  }
 
-  @media (max-width: 320px) {
-    #hero-section {
-      .content-width {
-        h1 {
-          font-size: 18px;
-        }
-        span.name {
-          font-size: 64px;
-          word-spacing: -0.3em;
-        }
-        .hero-link-buttons {
-          flex-direction: column;
-          gap: 16px;
+        .email-link {
+          .email-text {
+            display: none;
+          }
+
+          .email-icon {
+            display: block;
+            transform: scale(-1);
+            width: 24px;
+            height: 24px;
+          }
         }
       }
-      }
+    }
   }
+}
+
+@media (max-width: 320px) {
+  #hero-section {
+    .content-width {
+      h1 {
+        font-size: 18px;
+      }
+      span.name {
+        font-size: 64px;
+        word-spacing: -0.3em;
+      }
+      .hero-link-buttons {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  }
+}
