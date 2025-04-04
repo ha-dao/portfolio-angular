@@ -2,11 +2,12 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../interfaces/project';
 import { TechIconService } from '../../services/tech-icons.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-portfolio-projects-section',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './portfolio-projects-section.component.html',
   styleUrl: './portfolio-projects-section.component.scss'
 })
@@ -19,7 +20,11 @@ export class PortfolioProjectsSectionComponent implements OnInit {
   showModal = false;
   currentProjectIndex = 0;
 
-  constructor(private projectService: ProjectService, private techIconService: TechIconService) {}
+  constructor(
+    private projectService: ProjectService,
+    private techIconService: TechIconService,
+    private translateService: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.projects = this.projectService.getAllProjects();
@@ -67,6 +72,23 @@ export class PortfolioProjectsSectionComponent implements OnInit {
   getActiveProjectName(): string {
     const project = this.projects.find(p => p.id === this.activeProjectId);
     return project ? project.name : '';
+  }
+
+  getActiveProjectNameTranslated(): string {
+    const project = this.projects.find(p => p.id === this.activeProjectId);
+    if (!project) return '';
+    const translationKey = 'projects.' + project.id + '.name';
+    return this.translateService.instant(translationKey);
+  }
+
+  getProjectScreenshotAlt(projectId: string | null): string {
+    if (!projectId) return 'Project screenshot';
+    const translatedName = this.translateService.instant('projects.' + projectId + '.name');
+    return `${translatedName} screenshot`;
+  }
+
+  getNextProjectText(): string {
+    return this.translateService.instant('projects.nextProject');
   }
 
   hasTechIcon(technology: string): boolean {

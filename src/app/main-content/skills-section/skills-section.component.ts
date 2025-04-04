@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skills-section',
   standalone: true,
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, RouterModule],
   templateUrl: './skills-section.component.html',
   styleUrl: './skills-section.component.scss'
 })

@@ -15,8 +15,101 @@
     "text3": "Frontend Entwickler",
     "text4": "Wohnt in Güstrow"
   },
+  "about": {
+    "workingImageAlt": "Arbeitsbild",
+    "headerText": "Wer ich bin",
+    "title": "Über mich",
+    "introduction": "Hey, ich bin Lukas! Schreibe einige Informationen über dich, die IT-bezogen sind. Warum bist du so begeistert vom Programmieren? Was ist deine Inspirationsquelle, um deine Programmierfähigkeiten zu verbessern?",
+    "locationTitle": "Standort",
+    "locationDescription": "Wo befindest du dich? Wärst du offen für Remote-Arbeit oder eventuell bereit umzuziehen?",
+    "openmindedTitle": "Aufgeschlossen",
+    "openmindedDescription": "Zeige, dass du aufgeschlossen bist. Bist du begeistert davon, neue Technologien zu lernen und deine Fähigkeiten kontinuierlich zu verbessern?",
+    "problemsolvingTitle": "Problemlösung",
+    "problemsolvingDescription": "Eine kurze Beschreibung deines Problemlösungsansatzes. Lernst du aus jeder Herausforderung, während du nach der effizientesten oder elegantesten Lösung suchst? Du kannst einige Schlüsselwörter wie analytisches Denken, Kreativität, Beharrlichkeit und Zusammenarbeit einbeziehen."
+  },
   "skills": {
     "h2": "Fähigkeiten",
-    "pdescription": "Eine kurze Vorstellung deiner Fähigkeiten. Hebe deine Erfahrung mit verschiedenen Frontend-Technologien hervor und betone deine Offenheit, neue Technologien zu erlernen und dich an sie anzupassen. Zeige, wie wichtig es für dich ist, mit den schnellen Veränderungen in der Webentwicklung Schritt zu halten."
+    "pdescription": "Eine kurze Vorstellung deiner Fähigkeiten. Hebe deine Erfahrung mit verschiedenen Frontend-Technologien hervor und betone deine Offenheit, neue Technologien zu erlernen und dich an sie anzupassen. Zeige, wie wichtig es für dich ist, mit den schnellen Veränderungen in der Webentwicklung Schritt zu halten.",
+    "technologies": "Technologien",
+    "needAnother": "Du benötigst",
+    "anotherSkill": "eine andere Fähigkeit?",
+    "contactMe": "Kontaktiere mich gerne. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.",
+    "letsTalk": "Lass uns reden",
+    "growthMindsetAlt": "Growth Mindset Icon",
+    "growthMindset": "Growth Mindset",
+    "specialInterest": "Ich habe besonderes Interesse am Lernen"
+  },
+  "projects": {
+    "portfolio": "Portfolio",
+    "featuredProjects": "Ausgewählte Projekte",
+    "explore": "Entdecke eine Auswahl meiner Arbeiten hier - Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+    "liveTest": "Live-Test",
+    "nextProject": "Nächstes Projekt",
+    "01": {
+      "name": "Join",
+      "description": "Worum geht es in diesem Projekt?",
+      "longDescription": "Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu."
+    },
+    "02": {
+      "name": "El Pollo Locco",
+      "description": "Worum geht es in diesem Projekt?",
+      "longDescription": "Sprung-, Lauf- und Wurfspiel basierend auf objektorientiertem Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen."
+    },
+    "03": {
+      "name": "DA Bubble",
+      "description": "Worum geht es in diesem Projekt?",
+      "longDescription": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robuster Kanalorganisation."
+    }
+  },
+  "references": {
+    "heading": "Was meine Kollegen über mich sagen",
+    "quotesAlt": "Zitat-Symbol",
+    "previousAlt": "Vorherige",
+    "nextAlt": "Nächste",
+    "testimonials": [
+      {
+        "text": "Unser Projekt hat enorm von Lukas' effizienter Arbeitsweise profitiert.",
+        "author": "T.Schulz - Frontend Entwickler"
+      },
+      {
+        "text": "Lukas hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
+        "author": "H.Janisch - Team Partner"
+      },
+      {
+        "text": "Ich hatte das Glück, mit Simon an einem aufwändigen Gruppenprojekt an der Developer Akademie zu arbeiten. Er blieb immer ruhig, gelassen und konzentriert und stellte sicher, dass unser Team auf Erfolg ausgerichtet war. Er ist super sachkundig, einfach in der Zusammenarbeit, und ich würde gerne wieder mit ihm arbeiten, wenn sich die Gelegenheit bietet.",
+        "author": "A. Fischer - Team Partner"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontaktiere mich",
+    "heading": "Lass uns zusammenarbeiten",
+    "subheading": "Hast du ein Problem zu lösen?",
+    "description": "Ermutige Leute, dich zu kontaktieren und beschreibe, für welche Rolle du dich interessierst.<br> Zeige, dass du durch deine Arbeit einen Mehrwert für ihre Projekte schaffen wirst.",
+    "needDeveloper": "Brauchst du einen Frontend-Entwickler?",
+    "letsTalk": "Lass uns reden!",
+    "form": {
+      "nameLabel": "Wie ist dein Name?",
+      "namePlaceholder": "Dein Name kommt hier hin",
+      "nameError": "Hoppla! Dein Name fehlt noch",
+      "emailLabel": "Wie ist deine E-Mail?",
+      "emailPlaceholder": "deinemail@email.com",
+      "emailError": "Hoppla! Deine E-Mail wird benötigt",
+      "messageLabel": "Wie kann ich dir helfen?",
+      "messagePlaceholder": "Hallo Ha, ich interessiere mich für...",
+      "messageError": "Was möchtest du entwickeln lassen?",
+      "privacyPolicyText": "Ich habe die",
+      "privacyPolicyLink": "Datenschutzerklärung",
+      "privacyPolicyAgree": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+      "privacyRequired": "Bitte akzeptiere die Datenschutzerklärung.",
+      "submitButton": "Sag Hallo ;)"
+    }
+  },
+  "legalNotice": {
+    "title": "Impressum",
+    "contactHeading": "Kontakt",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "source": "Quelle"
   }
 }

@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TestimonialService } from '../../services/testimonial.service';
 import { TestimonialItemComponent } from './testimonial-item/testimonial-item.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-references-section',
   standalone: true,
-  imports: [CommonModule, TestimonialItemComponent],
+  imports: [CommonModule, TestimonialItemComponent, TranslatePipe],
   templateUrl: './references-section.component.html',
   styleUrls: ['./references-section.component.scss']
 })

@@ -1,18 +1,18 @@
 <section id="about-me">
   <div class="content-width">
     <article class="about-img-box">
-      <img [src]="imageUrl" alt="Working image">
+      <img [src]="imageUrl" alt="{{ 'about.workingImageAlt' | translate }}">
     </article>
 
     <article class="about-me-text-box">
-      <p>{{ headerText }}</p>
+      <p>{{ 'about.headerText' | translate }}</p>
       <article>
-        <h2>{{ title }}</h2>
-        <p>{{ introduction }}</p>
-                @for (item of infoItems; track item.title) {
+        <h2>{{ 'about.title' | translate }}</h2>
+        <p>{{ 'about.introduction' | translate }}</p>
+        @for (item of infoItems; track item.title) {
           <article>
-            <img [src]="item.icon" [alt]="item.title + ' icon'">
-            <p>{{ item.description }}</p>
+            <img [src]="item.icon" [alt]="('about.' + item.description + 'Title' | translate) + ' icon'">
+            <p>{{ 'about.' + item.description + 'Description' | translate }}</p>
           </article>
         }
       </article>

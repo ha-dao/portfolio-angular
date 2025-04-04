@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule, RouterModule],
+  imports: [FormsModule, RouterModule, TranslatePipe],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
@@ -39,7 +40,6 @@ export class ContactFormComponent {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
             ngForm.resetForm();
           },
           error: (error) => {
@@ -48,16 +48,15 @@ export class ContactFormComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
       ngForm.resetForm();
     }
   }
 
   checkboxWasCheckedBefore = false;
 
-checkboxChanged() {
-  if (this.contactData.privacypolicy) {
-    this.checkboxWasCheckedBefore = true;
+  checkboxChanged() {
+    if (this.contactData.privacypolicy) {
+      this.checkboxWasCheckedBefore = true;
+    }
   }
-}
 }

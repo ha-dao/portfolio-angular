@@ -1,7 +1,7 @@
 <div class="card-container" [class.active]="isActive">
-  <p>{{ testimonial.text }}</p>
+  <p>{{ getTranslatedText(testimonial) }}</p>
   <div class="author-section">
     <div class="divider-line"></div>
-    <span>{{ testimonial.author }}</span>
+    <span>{{ getTranslatedAuthor(testimonial) }}</span>
   </div>
 </div>

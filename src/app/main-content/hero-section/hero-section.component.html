@@ -3,10 +3,10 @@
     <h1>{{ 'hero.h1' | translate }}</h1>
     <span class="name">Ha Dao</span>
     <div class="hero-link-buttons">
-      <a [routerLink]="['/']" [fragment]="'projects'" class="link-button animated" data-text="Check my projects">
+      <a [routerLink]="['/']" [fragment]="'projects'" class="link-button animated" [attr.data-text]="'hero.bprojects' | translate">
         <span>{{ 'hero.bprojects' | translate }}</span>
       </a>
-      <a [routerLink]="['/']" [fragment]="'contact-me'" class="link-button animated" data-text="Contact me">
+      <a [routerLink]="['/']" [fragment]="'contact-me'" class="link-button animated" [attr.data-text]="'hero.bcontact' | translate">
         <span>{{ 'hero.bcontact' | translate }}</span>
       </a>
     </div>

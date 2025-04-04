@@ -1,16 +1,16 @@
 <section id="skills">
   <div class="content-width">
     <article class="skills-text-box">
-      <p>Technologies</p>
+      <p>{{ 'skills.technologies' | translate }}</p>
       <article>
         <h2>{{ 'skills.h2' | translate }}</h2>
         <p>{{ 'skills.pdescription' | translate }}</p>
         <article>
-          <h3>You need <span>another skill?</span></h3>
-          <p>Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
+          <h3>{{ 'skills.needAnother' | translate }} <span>{{ 'skills.anotherSkill' | translate }}</span></h3>
+          <p>{{ 'skills.contactMe' | translate }}</p>
         </article>
-        <a href="#contact-me" class="link-button animated" data-text="Let's talk">
-          <span>Let's talk</span>
+        <a [routerLink]="['/']" [fragment]="'contact-me'" class="link-button animated" [attr.data-text]="'skills.letsTalk' | translate">
+          <span>{{ 'skills.letsTalk' | translate }}</span>
         </a>
       </article>
     </article>
@@ -57,10 +57,10 @@
         <figcaption>SCRUM</figcaption>
       </figure>
       <figure class="figure-container" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()">
-        <img [src]="currentImage" alt="Growth Mindset Icon">
-        <figcaption class="figcaption">Growth Mindset</figcaption>
+        <img [src]="currentImage" alt="{{ 'skills.growthMindsetAlt' | translate }}">
+        <figcaption class="figcaption">{{ 'skills.growthMindset' | translate }}</figcaption>
         <div class="tooltip">
-          <p>I have a special interest in learning</p>
+          <p>{{ 'skills.specialInterest' | translate }}</p>
           <div>
             <img src="assets/img/3-skills/react-and-vuejs-icon.svg" alt="" width="20" height="20">
           </div>

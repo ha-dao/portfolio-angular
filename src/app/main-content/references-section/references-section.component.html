@@ -1,6 +1,6 @@
 <section id="references">
   <div class="content-width">
-    <h3>What my colleagues say about me</h3>
+    <h3>{{ 'references.heading' | translate }}</h3>
 
     <div class="carousel-container">
       <div class="carousel-wrapper">
@@ -48,10 +48,10 @@
         <div class="gradient-overlay left"></div>
         <div class="gradient-overlay right"></div>
       </div>
-      <img src="assets/img/5-reference/quotes.svg" alt="Quotes Icon" id="quotes-icon">
+      <img src="assets/img/5-reference/quotes.svg" alt="{{ 'references.quotesAlt' | translate }}" id="quotes-icon">
       <div class="navigation">
         <img src="assets/img/5-reference/arrow_back.svg"
-             alt="Previous"
+             alt="{{ 'references.previousAlt' | translate }}"
              class="nav-arrow"
              (click)="handlePrevClick()">
 
@@ -65,7 +65,7 @@
         </div>
 
         <img src="assets/img/5-reference/arrow_forward.svg"
-             alt="Next"
+             alt="{{ 'references.nextAlt' | translate }}"
              class="nav-arrow"
              (click)="handleNextClick()">
       </div>

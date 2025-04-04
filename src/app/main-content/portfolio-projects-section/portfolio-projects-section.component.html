@@ -1,8 +1,8 @@
 <section id="projects">
   <div class="content-width">
-    <h3>Portfolio</h3>
-    <h2>Featured Projects</h2>
-    <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
+    <h3>{{ 'projects.portfolio' | translate }}</h3>
+    <h2>{{ 'projects.featuredProjects' | translate }}</h2>
+    <p>{{ 'projects.explore' | translate }}</p>
 
     <div class="projects-container">
       <table #projectsTable>
@@ -15,7 +15,7 @@
               (click)="openModal(i)"
             >
               <td>
-                {{ project.name }}
+                {{ 'projects.' + project.id + '.name' | translate }}
                 @if (activeProjectId === project.id) {
                   <span class="arrow-icon"></span>
                 }
@@ -36,7 +36,7 @@
       @if (activeProjectId && !showModal && hoverPosition !== null) {
         <div class="projects-hover-content" [style.top.px]="hoverPosition">
           <figure>
-            <img [src]="getActiveProjectImage()" [alt]="getActiveProjectName() + ' screenshot'">
+            <img [src]="getActiveProjectImage()" [alt]="getProjectScreenshotAlt(activeProjectId)">
           </figure>
         </div>
       }
@@ -53,11 +53,11 @@
 
           <div class="project-info">
             <span class="project-number">{{ currentProject.id }}</span>
-            <h2 class="project-title">{{ currentProject.name }}</h2>
-            <p class="project-description">{{ currentProject.description }}</p>
+            <h2 class="project-title">{{ 'projects.' + currentProject.id + '.name' | translate }}</h2>
+            <p class="project-description">{{ 'projects.' + currentProject.id + '.description' | translate }}</p>
 
             <div class="project-long-description">
-              <p>{{ currentProject.longDescription }}</p>
+              <p>{{ 'projects.' + currentProject.id + '.longDescription' | translate }}</p>
             </div>
 
             <div class="project-technologies">
@@ -79,7 +79,7 @@
                 GitHub
               </a>
               <a [href]="currentProject.liveUrl" target="_blank" rel="noopener noreferrer" class="link-button2">
-                Live Test
+                {{ 'projects.liveTest' | translate }}
               </a>
             </div>
           </div>
@@ -91,14 +91,14 @@
             </button>
 
             <div class="project-image">
-              <img [src]="currentProject.imageUrl" [alt]="currentProject.name + ' screenshot'">
+              <img [src]="currentProject.imageUrl" [alt]="getProjectScreenshotAlt(currentProject.id)">
             </div>
           </div>
         </div>
 
         <div class="project-modal-footer">
           <button class="next-project-button" (click)="goToNextProject()">
-            Next Project
+            {{ getNextProjectText() }}
           </button>
         </div>
       </div>

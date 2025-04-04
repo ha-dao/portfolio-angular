@@ -15,8 +15,101 @@
     "text3": "Frontend Developer",
     "text4": "Based in Güstrow"
   },
+  "about": {
+    "workingImageAlt": "Working image",
+    "headerText": "Who I am",
+    "title": "About me",
+    "introduction": "Hey there, I'm Lukas! Write some information about yourself that is IT related. Why are you passionate about coding? What is your source of inspiration for improving your programming skills?",
+    "locationTitle": "Location",
+    "locationDescription": "Where are you based? Would you be open to working remotely or potentially relocating?",
+    "openmindedTitle": "Open-minded",
+    "openmindedDescription": "Show that you are open-minded. Are you enthusiastic about learning new technologies and continually improving your skills?",
+    "problemsolvingTitle": "Problem-solving",
+    "problemsolvingDescription": "A brief description of your problem-solving approach. Do you learn from each challenge as you search for the most efficient or elegant solution? You can include some keywords like: analytical thinking, creativity, persistence and collaboration."
+  },
   "skills": {
     "h2": "Skill Set",
-    "pdescription": "A short introduction of your skills. Highlight your experience of  using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development."
+    "pdescription": "A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development.",
+    "technologies": "Technologies",
+    "needAnother": "You need",
+    "anotherSkill": "another skill?",
+    "contactMe": "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+    "letsTalk": "Let's talk",
+    "growthMindsetAlt": "Growth Mindset Icon",
+    "growthMindset": "Growth Mindset",
+    "specialInterest": "I have a special interest in learning"
+  },
+  "projects": {
+    "portfolio": "Portfolio",
+    "featuredProjects": "Featured Projects",
+    "explore": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+    "liveTest": "Live Test",
+    "nextProject": "Next Project",
+    "01": {
+      "name": "Join",
+      "description": "What is this project about?",
+      "longDescription": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+    },
+    "02": {
+      "name": "El Pollo Locco",
+      "description": "What is this project about?",
+      "longDescription": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
+    },
+    "03": {
+      "name": "DA Bubble",
+      "description": "What is this project about?",
+      "longDescription": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization."
+    }
+  },
+  "references": {
+    "heading": "What my colleagues say about me",
+    "quotesAlt": "Quotes Icon",
+    "previousAlt": "Previous",
+    "nextAlt": "Next",
+    "testimonials": [
+      {
+        "text": "Our project benefited enormously from Lukas efficient way of working.",
+        "author": "T.Schulz - Frontend Developer"
+      },
+      {
+        "text": "Lukas has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.",
+        "author": "H.Janisch - Team Partner"
+      },
+      {
+        "text": "I had the good fortune of working with Simon in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool, and focused, and made sure our team was set up for success. He's super knowledgeable, easy to work with, and I'd happily work with him again given the chance.",
+        "author": "A. Fischer - Team Partner"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact me",
+    "heading": "Let's work together",
+    "subheading": "Got a problem to solve?",
+    "description": "Encourage people to contact you and describe what role you are interested in.<br> Show that you will add value to their projects through your work.",
+    "needDeveloper": "Need a Frontend developer?",
+    "letsTalk": "Let's talk!",
+    "form": {
+      "nameLabel": "What's your name?",
+      "namePlaceholder": "Your name goes here",
+      "nameError": "Oops! it seems your name is missing",
+      "emailLabel": "What's your email?",
+      "emailPlaceholder": "youremail@email.com",
+      "emailError": "Hoppla! your email is required",
+      "messageLabel": "How can I help you?",
+      "messagePlaceholder": "Hello Ha, I am intrested in...",
+      "messageError": "What do you need to develop?",
+      "privacyPolicyText": "I've read the",
+      "privacyPolicyLink": "privacy policy",
+      "privacyPolicyAgree": "and agree to the processing of my data as outlined.",
+      "privacyRequired": "Please accept the privacy policy.",
+      "submitButton": "Say Hello ;)"
+    }
+  },
+  "legalNotice": {
+    "title": "Legal Notice",
+    "contactHeading": "Contact",
+    "phone": "Phone",
+    "email": "E-Mail",
+    "source": "Source"
   }
 }
