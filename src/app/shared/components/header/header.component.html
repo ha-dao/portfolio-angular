@@ -1,6 +1,6 @@
 <header [ngClass]="{'scrolled': isScrolled}">
   <div class="content-width">
-    <nav>
+    <nav class="desktop-nav">
       <ul>
         <li class="switch">
           <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
@@ -15,6 +15,33 @@
         <li><a [routerLink]="['/']" [fragment]="'projects'" class="link-hover-dot-bottom">{{ 'header.projects' | translate }}</a></li>
       </ul>
     </nav>
+
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <div class="hamburger" [ngClass]="{'active': isMenuOpen}">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
     <img [routerLink]="['/']" [src]="(isHovered ? 'assets/img/1-hero/logo-hover.svg' : 'assets/img/1-hero/logo.svg')" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" alt="logo" id="logo" class="logo">
+  </div>
+
+  <div class="mobile-dropdown" [ngClass]="{'open': isMenuOpen}">
+    <div class="dropdown-content">
+      <ul>
+        <li><a [routerLink]="['/']" [fragment]="'about-me'" class="link-hover-dot-bottom" (click)="closeMenuIfMobile()">{{ 'header.about' | translate }}</a></li>
+        <li><a [routerLink]="['/']" [fragment]="'skills'" class="link-hover-dot-bottom" (click)="closeMenuIfMobile()">{{ 'header.skills' | translate }}</a></li>
+        <li><a [routerLink]="['/']" [fragment]="'projects'" class="link-hover-dot-bottom" (click)="closeMenuIfMobile()">{{ 'header.projects' | translate }}</a></li>
+        <li class="switch">
+          <input id="mobile-language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
+                 [checked]="isEnglish"
+                 (click)="toggleLanguage()">
+          <label for="mobile-language-toggle"></label>
+          <span class="on">EN</span>
+          <span class="off">DE</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </header>

@@ -10,11 +10,11 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-
 export class HeaderComponent {
   isHovered: boolean = false;
   isScrolled = false;
   isEnglish: boolean = false;
+  isMenuOpen: boolean = false;
 
   constructor(private translate: TranslateService) {
     translate.addLangs(['en', 'de']);
@@ -29,7 +29,6 @@ export class HeaderComponent {
     } else {
       translate.setDefaultLang('en');
       translate.use('en');
-      console.log('No saved language preference, using default: en');
     }
   }
 
@@ -50,4 +49,20 @@ export class HeaderComponent {
     localStorage.setItem('isEnglish', this.isEnglish.toString());
   }
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenuIfMobile() {
+    if (window.innerWidth <= 768) {
+      this.isMenuOpen = false;
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (event.target.innerWidth > 768) {
+      this.isMenuOpen = false;
+    }
+  }
 }
