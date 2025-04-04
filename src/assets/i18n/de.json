@@ -103,7 +103,14 @@
       "privacyPolicyAgree": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
       "privacyRequired": "Bitte akzeptiere die Datenschutzerklärung.",
       "submitButton": "Sag Hallo ;)"
-    }
+    },
+      "popup": {
+        "successTitle": "Nachricht gesendet!",
+        "errorTitle": "Fehler beim Senden",
+        "successMessage": "Deine Nachricht wurde erfolgreich übermittelt. Ich werde mich so schnell wie möglich bei dir melden. Vielen Dank!",
+        "errorMessage": "Beim Senden deiner Nachricht ist ein Fehler aufgetreten:",
+        "closeButton": "Schließen"
+      }
   },
   "legalNotice": {
     "title": "Impressum",

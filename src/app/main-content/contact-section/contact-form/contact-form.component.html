@@ -37,3 +37,24 @@
     <input type="submit" [value]="'contact.form.submitButton' | translate" [disabled]="!contactForm.form.valid">
   </form>
 </div>
+
+@if (submissionStatus) {
+  <div class="popup-overlay" (click)="closePopup()">
+    <div class="popup" [class.success]="submissionStatus === 'success'" [class.error]="submissionStatus === 'error'" (click)="$event.stopPropagation()">
+      <div class="popup-header">
+        <h3>{{ (submissionStatus === 'success' ? 'contact.popup.successTitle' : 'contact.popup.errorTitle') | translate }}</h3>
+      </div>
+      <div class="popup-content">
+        @if (submissionStatus === 'success') {
+          <p>{{ 'contact.popup.successMessage' | translate }}</p>
+        } @else {
+          <p>{{ 'contact.popup.errorMessage' | translate }}</p>
+          <p class="error-details">{{ errorMessage }}</p>
+        }
+      </div>
+      <div class="popup-footer">
+        <button (click)="closePopup()">{{ 'contact.popup.closeButton' | translate }}</button>
+      </div>
+    </div>
+  </div>
+}

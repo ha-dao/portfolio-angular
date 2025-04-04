@@ -22,34 +22,49 @@ export class ContactFormComponent {
     privacypolicy: false,
   }
 
-  mailTest = true;
+  mailTest = false;
+
+  submissionStatus: 'success' | 'error' | null = null;
+  errorMessage = '';
 
   post = {
     endPoint: 'https://ha-dao.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
+        'Content-Type': 'application/json',
       },
     },
   };
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+      this.http.post<any>(this.post.endPoint, this.post.body(this.contactData), this.post.options)
         .subscribe({
           next: (response) => {
+            this.submissionStatus = 'success';
             ngForm.resetForm();
+            this.checkboxWasCheckedBefore = false;
           },
           error: (error) => {
             console.error(error);
+            this.submissionStatus = 'error';
+            this.errorMessage = error.message || 'Ein Fehler ist aufgetreten. Bitte versuche es später erneut.';
+            this.checkboxWasCheckedBefore = false;
+            ngForm.resetForm();
           },
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      this.submissionStatus = 'success';
       ngForm.resetForm();
+      this.checkboxWasCheckedBefore = false;
     }
+  }
+
+  closePopup() {
+    this.submissionStatus = null;
+    this.errorMessage = '';
   }
 
   checkboxWasCheckedBefore = false;
