@@ -99,6 +99,7 @@
 app-infinite-banner {
   z-index: 99;
   height: 40px;
+  width: calc(100% - 2px);
   position: absolute;
   bottom: 0;
   left: 0;
