@@ -55,6 +55,7 @@
 
 @media (max-width: 768px) {
   .content-width {
+    word-break: break-all;
     article {
       padding-right: 0;
       >h3 {
