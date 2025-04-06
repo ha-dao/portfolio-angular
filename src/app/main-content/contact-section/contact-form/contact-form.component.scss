@@ -88,9 +88,10 @@ input[type=submit] {
   }
 }
 
-.container {
+.contact-form-container {
   border-radius: 5px;
   padding: 20px;
+  overflow: hidden;
   form {
     div {
       text-align: left;
@@ -100,6 +101,7 @@ input[type=submit] {
 
 hr {
   margin: 24px 0;
+  width: 100%;
   border-color: $primary-green;
 }
 
@@ -386,7 +388,7 @@ label.basic-label {
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .container {
+  .contact-form-container {
     padding: 0;
   }
 
