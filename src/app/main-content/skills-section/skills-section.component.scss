@@ -4,9 +4,9 @@
   background-image: radial-gradient(circle closest-corner at 0px 50%, #08463b 0%, #1C1C1C 100%);
   background-image: -webkit-radial-gradient(circle closest-corner at 0px 50%, #08463b 0%, #1C1C1C 100%);
   background-image: -moz-radial-gradient(circle closest-corner at 0px 50%, #08463b 0%, #1C1C1C 100%);
+  padding: 120px 0;
   .content-width {
     @include displayFlex($direction: row, $justify: center, $align: flex-start, $gap: 96px);
-    padding: 100px 16px;
   }
 }
 
@@ -170,9 +170,9 @@
 /* Media Queries */
 @media (max-width: 1440px) {
   #skills {
+    padding: 120px 0 120px 0;
     .content-width {
       @include displayFlex($direction: column, $justify: center, $align: center, $gap: 40px);
-      padding: 80px 0 0 0;
     }
   }
 
@@ -340,14 +340,7 @@
   }
 }
 
-/* Für sehr kleine Bildschirme (320px) */
 @media (max-width: 320px) {
-  #skills {
-    .content-width {
-      padding: 80px 0;
-    }
-  }
-
   .skills-text-box {
     > p {
       font-size: 16px;

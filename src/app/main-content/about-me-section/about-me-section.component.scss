@@ -2,6 +2,8 @@
 
 #about-me {
   width: 100%;
+  padding: 140px 0 140px 0;
+  // margin: 0 0 120px 0;
   .content-width {
     @include displayFlex($direction: row, $justify: space-between, $align: center, $gap: 80px);
   }
@@ -77,10 +79,6 @@
 
 /* Media Queries */
 @media (max-width: 1440px) {
-  .content-width {
-    padding: 0 24px;
-  }
-
   #about-me {
     .content-width {
       @include displayFlex($direction: column, $justify: center, $align: center, $gap: 40px);

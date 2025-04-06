@@ -1,5 +1,9 @@
 @import '../../../styles/styles.scss';
 
+#contact-me {
+  padding: 120px 0;
+}
+
 .content-width {
   display: flex;
   article {
@@ -51,7 +55,6 @@
 
 @media (max-width: 768px) {
   .content-width {
-    padding: 0;
     article {
       padding-right: 0;
       >h3 {
