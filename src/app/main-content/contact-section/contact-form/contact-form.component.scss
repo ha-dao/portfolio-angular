@@ -4,6 +4,25 @@
   color: #ffffff;
 }
 
+/* Chrome, Safari, Edge autofill background removal */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Mozilla autofill background removal */
+@-moz-document url-prefix() {
+  input:-moz-autofill,
+  input:-moz-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
+    background-color: transparent !important;
+  }
+}
+
 input[type=text], input[type=email], textarea {
   width: 100%;
   padding: 0 40px;
@@ -23,6 +42,16 @@ input[type=text], input[type=email], textarea {
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
+}
+
+/* Hover-Effekt für Input-Felder */
+input[type=text]:hover, input[type=email]:hover, textarea:hover {
+  cursor: text; /* Zeigt den Text-Cursor (I-Beam) an */
+}
+
+/* Fokus-Effekt für Input-Felder */
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+  cursor: text;
 }
 
 input[type=checkbox] {
@@ -59,7 +88,6 @@ input[type=submit] {
     background-color: $primary-green;
     border: 1px solid $primary-green;
   }
-
 }
 
 .container {
@@ -92,7 +120,6 @@ hr {
     width: 20px;
     height: 20px;
   }
-
 }
 
 label.basic-label {
@@ -110,7 +137,6 @@ label.basic-label {
   margin: 40px 0;
   padding: 0 40px;
 }
-
 
 .checkbox-container {
 	input {
@@ -177,6 +203,7 @@ label.basic-label {
     }
   }
 }
+
 .checkmark {
 	position: relative;
 	top: 0;
@@ -250,7 +277,6 @@ label.basic-label {
     font-size: 20px;
     color: #ffffff;
   }
-
 }
 
 .popup-content {
@@ -309,6 +335,64 @@ label.basic-label {
   }
 }
 
+/* Email tooltip styles */
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Email tooltip styles */
+.input-container {
+  position: relative;
+  width: 100%;
+  height: 10px;
+}
+
+.tooltip-container {
+  position: absolute;
+  top: 45px;
+  left: 40px;
+  z-index: 10;
+  margin-top: 8px;
+  display: none; /* Standardmäßig ausgeblendet */
+}
+
+/* Wird durch @if-Bedingung angezeigt */
+.tooltip-container.visible {
+  display: block;
+}
+
+.tooltip {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-family: 'Karla';
+  font-size: 14px;
+  position: relative;
+  border: 1px solid $alert-text;
+  box-shadow: 0 0 10px rgba(255, 100, 100, 0.2);
+  max-width: 300px; /* Maximale Breite festlegen */
+  word-wrap: break-word; /* Lange Wörter umbrechen */
+
+  .highlight {
+    color: $alert-text;
+    font-weight: bold;
+  }
+}
+
+.tooltip:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 15px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid $alert-text;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .container {
@@ -353,5 +437,15 @@ label.basic-label {
   .popup-footer button {
     font-size: 14px;
     padding: 6px 16px;
+  }
+
+  .tooltip-container {
+    left: 16px;
+  }
+
+  .tooltip {
+    font-size: 12px;
+    padding: 8px 12px;
+    max-width: 250px;
   }
 }

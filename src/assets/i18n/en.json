@@ -95,6 +95,16 @@
       "emailLabel": "What's your email?",
       "emailPlaceholder": "youremail@email.com",
       "emailError": "Hoppla! your email is required",
+      "emailTooltip": {
+        "missingAt": "Please add the",
+        "example": "symbol (e.g.",
+        "missingProvider": "Please enter an domain name or email provider like",
+        "afterAt": "after the @ symbol",
+        "needTLD": "Please add a",
+        "tldExample": "with at least 2 characters (e.g.",
+        "tldTooShort": "After the dot, add at least 2 characters (e.g.",
+        "invalid": "Please enter a valid email address (e.g."
+      },
       "messageLabel": "How can I help you?",
       "messagePlaceholder": "Hello Ha, I am intrested in...",
       "messageError": "What do you need to develop?",
