@@ -48,8 +48,8 @@
     <div class="project-modal-overlay">
       <div class="project-modal-backdrop" (click)="closeModal()"></div>
 
-      <div class="project-modal">
-        <div class="project-modal-content">
+      <div class="project-modal" [class.landscape-mode]="isLandscape">
+        <div class="project-modal-content" [class.landscape-mode]="isLandscape">
 
           <div class="project-info">
             <span class="project-number">{{ currentProject.id }}</span>
@@ -61,7 +61,6 @@
             </div>
 
             <div class="project-technologies">
-
               <div class="tech-tags">
                 @for (tech of currentProject.technologies; track tech) {
                   <span class="tech-tag">
@@ -85,7 +84,6 @@
           </div>
 
           <div class="project-image-container">
-
             <button class="close-button" (click)="closeModal()">
               <span class="close-icon"></span>
             </button>

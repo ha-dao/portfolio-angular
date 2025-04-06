@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy, HostListener } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../interfaces/project';
 import { TechIconService } from '../../services/tech-icons.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio-projects-section',
@@ -11,7 +12,7 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
   templateUrl: './portfolio-projects-section.component.html',
   styleUrl: './portfolio-projects-section.component.scss'
 })
-export class PortfolioProjectsSectionComponent implements OnInit {
+export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
   @ViewChild('projectsTable') projectsTable!: ElementRef;
 
   projects: Project[] = [];
@@ -19,6 +20,8 @@ export class PortfolioProjectsSectionComponent implements OnInit {
   hoverPosition: number | null = null;
   showModal = false;
   currentProjectIndex = 0;
+  isLandscape = false;
+  private resizeSubscription?: Subscription;
 
   constructor(
     private projectService: ProjectService,
@@ -28,6 +31,27 @@ export class PortfolioProjectsSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.projects = this.projectService.getAllProjects();
+    this.checkOrientation();
+  }
+
+  ngOnDestroy(): void {
+    if (this.resizeSubscription) {
+      this.resizeSubscription.unsubscribe();
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.checkOrientation();
+  }
+
+  @HostListener('window:orientationchange', ['$event'])
+  onOrientationChange() {
+    this.checkOrientation();
+  }
+
+  private checkOrientation(): void {
+    this.isLandscape = window.innerWidth > window.innerHeight;
   }
 
   setActiveProject(projectId: string, event: MouseEvent): void {
@@ -49,6 +73,7 @@ export class PortfolioProjectsSectionComponent implements OnInit {
     this.currentProjectIndex = index;
     this.showModal = true;
     document.body.style.overflow = 'hidden';
+    this.checkOrientation();
   }
 
   closeModal(): void {
