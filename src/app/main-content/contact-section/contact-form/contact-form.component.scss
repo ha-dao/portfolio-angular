@@ -9,7 +9,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  -webkit-box-shadow: 0 0 0 30px #1c1c1c inset !important;
   -webkit-text-fill-color: #ffffff !important;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -19,7 +19,8 @@ input:-webkit-autofill:active {
   input:-moz-autofill,
   input:-moz-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
-    background-color: transparent !important;
+    background-color: #1c1c1c !important;
+    color: #ffffff !important;
   }
 }
 
@@ -244,7 +245,7 @@ label.basic-label {
 }
 
 .popup {
-  background-color: rgba(0, 0, 0, 0.85);
+  background: linear-gradient(45deg, rgba(28,28,28,1) 40%, rgba(8,70,59,1) 100%);
   border-radius: 8px;
   width: 90%;
   max-width: 500px;
@@ -356,7 +357,7 @@ label.basic-label {
 }
 
 .tooltip {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: #1c1c1c;
   color: #ffffff;
   padding: 10px 15px;
   border-radius: 4px;
