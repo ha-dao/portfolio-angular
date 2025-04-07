@@ -101,7 +101,8 @@
         "missingProvider": "Please enter an domain name or email provider like",
         "afterAt": "after the @ symbol",
         "needTLD": "Please add a",
-        "tldExample": "with at least 2 characters (e.g.",
+        "missingDot": "dot",
+        "tldExample": " (e.g.",
         "tldTooShort": "After the dot, add at least 2 characters (e.g.",
         "invalid": "Please enter a valid email address (e.g."
       },

@@ -21,7 +21,7 @@
                   @if (!contactData.email.includes('@')) {
                     <span>{{ 'contact.form.emailTooltip.missingAt' | translate }} <span class="highlight">"&#64;"</span> {{ 'contact.form.emailTooltip.example' | translate }} <span class="highlight">info&#64;gmail.com</span>&#41;</span>
                   } @else if (contactData.email.split('@').length > 1 && contactData.email.split('@')[1].length >= 2 && !contactData.email.includes('.', contactData.email.indexOf('@'))) {
-                    <span>{{ 'contact.form.emailTooltip.needTLD' | translate }} <span class="highlight">"Punkt"</span> {{ 'contact.form.emailTooltip.tldExample' | translate }} <span class="highlight">.de</span>, <span class="highlight">.com</span>&#41;</span>
+                    <span>{{ 'contact.form.emailTooltip.needTLD' | translate }} <span class="highlight">{{ 'contact.form.emailTooltip.missingDot' | translate }}</span> {{ 'contact.form.emailTooltip.tldExample' | translate }} <span class="highlight">.de</span>, <span class="highlight">.com</span>&#41;</span>
                   } @else if (!contactData.email.includes('.', contactData.email.indexOf('@'))) {
                     <span>{{ 'contact.form.emailTooltip.missingProvider' | translate }} <span class="highlight">gmail</span>, <span class="highlight">gmx</span> {{ 'contact.form.emailTooltip.afterAt' | translate }}</span>
                   } @else if (contactData.email.includes('.') && contactData.email.split('.').length > 0 && (contactData.email.split('.').pop() || '').length < 2) {
