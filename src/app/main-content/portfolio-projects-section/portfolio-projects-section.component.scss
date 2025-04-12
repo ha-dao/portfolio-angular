@@ -294,10 +294,14 @@
       &::after {
         transform: rotate(-45deg);
       }
+      &:hover {
+        &::before,
+        &::after {
+          background-color: $primary-green;
+        }
+      }
     }
-    &:hover {
-      transform: scale(1.2);
-    }
+
   }
 
   .project-image {
