@@ -22,6 +22,10 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
   currentProjectIndex = 0;
   isLandscape = false;
   private resizeSubscription?: Subscription;
+  private touchStartX: number = 0;
+  private touchStartY: number = 0;
+  private touchMoved: boolean = false;
+  private readonly TOUCH_THRESHOLD: number = 10;
 
   constructor(
     private projectService: ProjectService,
@@ -67,6 +71,55 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
   clearActiveProject(): void {
     this.activeProjectId = null;
     this.hoverPosition = null;
+  }
+
+  // New touch event handlers
+  handleTouchStart(event: TouchEvent, projectId: string): void {
+    // Store the initial touch position
+    if (event.touches.length > 0) {
+      this.touchStartX = event.touches[0].clientX;
+      this.touchStartY = event.touches[0].clientY;
+      this.touchMoved = false;
+
+      // Set active project for visual feedback
+      this.activeProjectId = projectId;
+
+      const trElement = (event.currentTarget as HTMLElement);
+      const tableRect = this.projectsTable.nativeElement.getBoundingClientRect();
+      const trRect = trElement.getBoundingClientRect();
+
+      this.hoverPosition = trRect.top - tableRect.top + (trRect.height / 2) - 100;
+    }
+  }
+
+  handleTouchEnd(event: TouchEvent, index: number): void {
+    // Prevent default to avoid any unwanted behaviors
+    event.preventDefault();
+
+    // Check if this was a tap (not a scroll)
+    if (!this.touchMoved) {
+      this.openModal(index);
+    }
+
+    // Clear active project state
+    this.clearActiveProject();
+  }
+
+  @HostListener('touchmove', ['$event'])
+  onTouchMove(event: TouchEvent): void {
+    // Detect if touch has moved beyond threshold (to differentiate between tap and scroll)
+    if (event.touches.length > 0) {
+      const touchX = event.touches[0].clientX;
+      const touchY = event.touches[0].clientY;
+
+      const deltaX = Math.abs(touchX - this.touchStartX);
+      const deltaY = Math.abs(touchY - this.touchStartY);
+
+      if (deltaX > this.TOUCH_THRESHOLD || deltaY > this.TOUCH_THRESHOLD) {
+        this.touchMoved = true;
+        this.clearActiveProject();
+      }
+    }
   }
 
   openModal(index: number): void {

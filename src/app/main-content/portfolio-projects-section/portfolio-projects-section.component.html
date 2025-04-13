@@ -13,6 +13,8 @@
               (mouseenter)="setActiveProject(project.id, $event)"
               (mouseleave)="clearActiveProject()"
               (click)="openModal(i)"
+              (touchstart)="handleTouchStart($event, project.id)"
+              (touchend)="handleTouchEnd($event, i)"
             >
               <td>
                 {{ 'projects.' + project.id + '.name' | translate }}
@@ -42,7 +44,6 @@
       }
     </div>
   </div>
-
 
   @if (showModal) {
     <div class="project-modal-overlay">
@@ -84,7 +85,7 @@
           </div>
 
           <div class="project-image-container">
-            <button class="close-button" (click)="closeModal()">
+            <button class="close-button" (click)="closeModal()" (touchend)="closeModal()">
               <span class="close-icon"></span>
             </button>
 
@@ -95,7 +96,7 @@
         </div>
 
         <div class="project-modal-footer">
-          <button class="next-project-button" (click)="goToNextProject()">
+          <button class="next-project-button" (click)="goToNextProject()" (touchend)="goToNextProject()">
             {{ getNextProjectText() }}
           </button>
         </div>
