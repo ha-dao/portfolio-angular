@@ -3,8 +3,6 @@
 @import './variables.scss';
 @import './mixins.scss';
 @import './buttons.scss';
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 * {
   margin: 0;
@@ -15,6 +13,30 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  /* Firefox Scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: $primary-green rgba(0, 0, 0, 0.1);
+}
+
+/* Global Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-green;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  &:hover {
+    background: darken($primary-green, 10%);
+  }
 }
 
 body, li, a {
