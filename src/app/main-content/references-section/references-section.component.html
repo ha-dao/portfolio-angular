@@ -32,17 +32,6 @@
               [isActive]="false">
             </app-testimonial-item>
           </div>
-
-          <div class="touch-overlay"
-               [class.grabbing]="isDragging"
-               (mousedown)="touchStart($event)"
-               (touchstart)="touchStart($event)"
-               (mousemove)="touchMove($event)"
-               (touchmove)="touchMove($event)"
-               (mouseup)="touchEnd()"
-               (mouseleave)="touchEnd()"
-               (touchend)="touchEnd()">
-          </div>
         </div>
 
         <div class="gradient-overlay left"></div>

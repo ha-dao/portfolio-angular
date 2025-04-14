@@ -52,48 +52,6 @@ export class ReferencesSectionComponent {
     return this.testimonialService.getItemIndex(this.activeIndex) === index;
   }
 
-  touchStart(event: TouchEvent | MouseEvent): void {
-    this.isDragging = true;
-
-    if (event instanceof TouchEvent) {
-      this.startPosition = event.touches[0].clientX;
-    } else {
-      this.startPosition = event.clientX;
-    }
-  }
-
-  touchMove(event: TouchEvent | MouseEvent): void {
-    if (!this.isDragging) return;
-
-    let clientX = 0;
-    if (event instanceof TouchEvent) {
-      clientX = event.touches[0].clientX;
-    } else {
-      clientX = event.clientX;
-    }
-
-    const diff = clientX - this.startPosition;
-
-    const maxDrag = window.innerWidth / 3;
-    this.currentOffset = Math.sign(diff) * Math.min(Math.abs(diff), maxDrag);
-  }
-
-  touchEnd(): void {
-    if (!this.isDragging) return;
-
-    this.isDragging = false;
-
-    if (Math.abs(this.currentOffset) > 80) {
-      if (this.currentOffset > 0) {
-        this.handlePrevClick();
-      } else {
-        this.handleNextClick();
-      }
-    }
-
-    this.currentOffset = 0;
-  }
-
   getTransform(position: 'prev' | 'current' | 'next'): string {
     let baseTransform = '';
 
@@ -108,11 +66,10 @@ export class ReferencesSectionComponent {
         baseTransform = 'translateX(calc(-50% + ' + this.currentOffset + 'px))';
         break;
     }
-
     return baseTransform;
   }
 
   getTransition(): string {
-    return this.isDragging ? 'none' : 'all 0.5s ease-in-out';
+    return this.isDragging ? 'all 0.5s ease-in-out' : 'none';
   }
 }
