@@ -27,8 +27,6 @@ export class TestimonialItemComponent {
   }
 
   private getTestimonialIndex(testimonial: Testimonial): number {
-    // Hier identifizieren wir den Index des Testimonials im Service
-    // Diese Methode ist nicht optimal, aber funktioniert für den Anfang
     const allTestimonials = this.getTestimonials();
     const index = allTestimonials.findIndex(t =>
       t.text === testimonial.text && t.author === testimonial.author
@@ -37,8 +35,6 @@ export class TestimonialItemComponent {
   }
 
   private getTestimonials(): Testimonial[] {
-    // Diese Methode nutzt die gleichen Daten wie der Service
-    // In der Praxis würde man lieber eine Methode im Service nutzen oder IDs verwenden
     return [
       {
         text: "Our project benefited enormously from Lukas efficient way of working.",

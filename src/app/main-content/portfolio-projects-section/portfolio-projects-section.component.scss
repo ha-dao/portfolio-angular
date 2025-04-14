@@ -151,7 +151,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  overflow-y: auto; /* Allow scrolling if content exceeds viewport */
+  overflow-y: auto;
 }
 
 .project-modal-backdrop {
@@ -173,7 +173,7 @@
   margin: auto;
   padding: 40px;
   z-index: 1001;
-  overflow-y: auto; /* Allow content to scroll */
+  overflow-y: auto;
   animation: modalFadeIn 0.3s ease-in-out;
   display: flex;
   flex-direction: column;

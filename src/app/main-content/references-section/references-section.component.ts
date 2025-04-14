@@ -1,4 +1,3 @@
-// components/references-section/references-section.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TestimonialService } from '../../services/testimonial.service';

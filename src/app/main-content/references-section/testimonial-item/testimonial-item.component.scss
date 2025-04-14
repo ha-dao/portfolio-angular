@@ -24,17 +24,6 @@
     margin-bottom: 16px;
     max-height: 96px;
     text-align: left;
-
-    &::-webkit-scrollbar {
-      width: 5px;
-      background-color: #ffffff33;
-      border-radius: 16px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #3DCFB6;
-      border-radius: 16px;
-    }
   }
 
   &.active p {
