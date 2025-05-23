@@ -22,6 +22,7 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
   currentProjectIndex = 0;
   isLandscape = false;
   private resizeSubscription?: Subscription;
+  private langChangeSubscription?: Subscription;
   private touchStartX: number = 0;
   private touchStartY: number = 0;
   private touchMoved: boolean = false;
@@ -34,7 +35,12 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.projects = this.projectService.getAllProjects();
+    this.loadProjects();
+
+    this.langChangeSubscription = this.translateService.onLangChange.subscribe(() => {
+      this.loadProjects();
+    });
+
     this.checkOrientation();
   }
 
@@ -42,6 +48,11 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
     if (this.resizeSubscription) {
       this.resizeSubscription.unsubscribe();
     }
+    this.langChangeSubscription?.unsubscribe();
+  }
+
+  private loadProjects(): void {
+    this.projects = this.projectService.getAllProjectsSync();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -73,15 +84,12 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
     this.hoverPosition = null;
   }
 
-  // New touch event handlers
   handleTouchStart(event: TouchEvent, projectId: string): void {
-    // Store the initial touch position
     if (event.touches.length > 0) {
       this.touchStartX = event.touches[0].clientX;
       this.touchStartY = event.touches[0].clientY;
       this.touchMoved = false;
 
-      // Set active project for visual feedback
       this.activeProjectId = projectId;
 
       const trElement = (event.currentTarget as HTMLElement);
@@ -93,21 +101,17 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
   }
 
   handleTouchEnd(event: TouchEvent, index: number): void {
-    // Prevent default to avoid any unwanted behaviors
     event.preventDefault();
 
-    // Check if this was a tap (not a scroll)
     if (!this.touchMoved) {
       this.openModal(index);
     }
 
-    // Clear active project state
     this.clearActiveProject();
   }
 
   @HostListener('touchmove', ['$event'])
   onTouchMove(event: TouchEvent): void {
-    // Detect if touch has moved beyond threshold (to differentiate between tap and scroll)
     if (event.touches.length > 0) {
       const touchX = event.touches[0].clientX;
       const touchY = event.touches[0].clientY;
@@ -152,17 +156,11 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
     return project ? project.name : '';
   }
 
-  getActiveProjectNameTranslated(): string {
-    const project = this.projects.find(p => p.id === this.activeProjectId);
-    if (!project) return '';
-    const translationKey = 'projects.' + project.id + '.name';
-    return this.translateService.instant(translationKey);
-  }
-
   getProjectScreenshotAlt(projectId: string | null): string {
     if (!projectId) return 'Project screenshot';
-    const translatedName = this.translateService.instant('projects.' + projectId + '.name');
-    return `${translatedName} screenshot`;
+    const project = this.projects.find(p => p.id === projectId);
+    const projectName = project ? project.name : 'Project';
+    return `${projectName} screenshot`;
   }
 
   getNextProjectText(): string {

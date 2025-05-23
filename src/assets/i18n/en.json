@@ -19,17 +19,17 @@
     "workingImageAlt": "Working image",
     "headerText": "Who I am",
     "title": "About me",
-    "introduction": "Hey there, I'm Ha! Write some information about yourself that is IT related. Why are you passionate about coding? What is your source of inspiration for improving your programming skills?",
+    "introduction": "Hey there, I'm Ha! Front-End Developer with an unstoppable passion for turning creative ideas into amazing digital experiences. I absolutely love combining visual creativity with technical problem-solving! From managing 80+ client websites to building interactive web apps and games, every project fuels my enthusiasm for clean, efficient code. What really gets me fired up is seeing complex APIs come to life through intuitive interfaces – it's like digital magic! Ready to create something incredible together? Let's make it happen!",
     "locationTitle": "Location",
-    "locationDescription": "Where are you based? Would you be open to working remotely or potentially relocating?",
+    "locationDescription": "I'm based in Güstrow, Germany, and fully open to remote work and relocating for great opportunities!",
     "openmindedTitle": "Open-minded",
-    "openmindedDescription": "Show that you are open-minded. Are you enthusiastic about learning new technologies and continually improving your skills?",
+    "openmindedDescription": "I'm constantly exploring new frameworks and technologies – every tool is a chance to create better solutions.",
     "problemsolvingTitle": "Problem-solving",
-    "problemsolvingDescription": "A brief description of your problem-solving approach. Do you learn from each challenge as you search for the most efficient or elegant solution? You can include some keywords like: analytical thinking, creativity, persistence and collaboration."
+    "problemsolvingDescription": "I tackle challenges with analytical thinking and creativity, collaborating with teams to find elegant, efficient solutions."
   },
   "skills": {
     "h2": "Skill Set",
-    "pdescription": "A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development.",
+    "pdescription": "My core expertise lies in JavaScript, Angular, and TypeScript for enterprise-level applications. I've successfully implemented task management systems, integrated PokeAPI for interactive web experiences, and built responsive single-page applications using modern development workflows. I'm passionate about exploring new Angular features, advanced TypeScript patterns, and staying ahead of JavaScript ecosystem updates to deliver cutting-edge solutions.",
     "technologies": "Technologies",
     "needAnother": "You need",
     "anotherSkill": "another skill?",
@@ -56,9 +56,9 @@
       "longDescription": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
     },
     "03": {
-      "name": "DA Bubble",
+      "name": "Pokédex",
       "description": "What is this project about?",
-      "longDescription": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization."
+      "longDescription": "This Pokédex was created using the PokéAPI. You can search for your favorite Pokémon and view all the important information about it."
     }
   },
   "references": {
@@ -68,16 +68,28 @@
     "nextAlt": "Next",
     "testimonials": [
       {
-        "text": "Our project benefited enormously from Lukas efficient way of working.",
-        "author": "T.Schulz - Frontend Developer"
+        "text": "Working with Ha was a real pleasure. He consistently demonstrated a keen eye for design and an exceptional attention to detail. His dedication and drive pushed the entire team forward, and he never settled for “good enough” — only considering a task complete when every detail was just right. His commitment and energy made a real difference to the success of our projects.",
+        "author": "Christian Duus - Team Partner"
       },
       {
-        "text": "Lukas has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.",
-        "author": "H.Janisch - Team Partner"
+        "text": "Ha stood out with his excellent design skills and also showed strong abilities in programming. His creativity and sense of humor brought a great vibe to the team and positively influenced our collaboration. Working with Ha was a great experience.",
+        "author": "Soufiane Nouira - Team Partner"
       },
       {
-        "text": "I had the good fortune of working with Simon in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool, and focused, and made sure our team was set up for success. He's super knowledgeable, easy to work with, and I'd happily work with him again given the chance.",
-        "author": "A. Fischer - Team Partner"
+        "text": "I had the pleasure of working with Ha Dao on the Kochwelt project, and it was an incredibly enriching experience. Ha Dao brought extensive know-how and expertise to the team, which allowed us to gain many new insights. I especially appreciated his helpful tips, tricks, and valuable advice. Ha Dao consistently worked with reliability and professionalism, making the exchange of information and collaboration on the code an efficient and seamless process. His expertise and dedicated work ethic make him an outstanding team member who enhances any project. Thank you, Ha, for your fantastic support and the inspiring collaboration!",
+        "author": "Jonathan Michutta - Team Partner"
+      },
+      {
+        "text": "I had the pleasure of working with Ha on a website project. He was very knowledgeable and came up with effective solutions when needed. Ha also ensured that his coding approach was clear to the team by explaining it well. When the team didn't like something he would work with the team to find a solution that pleases everyone.",
+        "author": "Taher Abdel Megid - Team Partner"
+      },
+      {
+        "text": "As part of a group project, I had the opportunity to work with Ha. In this project, he took responsibility for the design and styling of the application – and did an excellent job. He demonstrated a strong sense of design and user experience. I was particularly impressed by how consistently and professionally he executed the overall visual appearance. Ha not only contributed creative ideas, but also implemented them with clean and thoughtful execution – making a significant contribution to the success of our project. Ha is a dedicated, reliable, and highly skilled team player when it comes to design and visual development.",
+        "author": "Marvin Schneemann - Team Partner"
+      },
+      {
+        "text": "I really enjoyed working with Ha on the team. I was especially impressed by his structured and solution-oriented approach to programming. Ha not only brings solid technical knowledge but also the ability to quickly analyze complex problems and find creative solutions. Through his open communication and teamwork skills, he significantly contributed to the success of our project. I am confident that Ha’s strengths and dedication will be a great asset to any team in the future",
+        "author": "Mihaela Melania Aghirculesei - Team Partner"
       }
     ]
   },
@@ -85,8 +97,8 @@
     "title": "Contact me",
     "heading": "Let's work together",
     "subheading": "Got a problem to solve?",
-    "description": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
-    "needDeveloper": "Need a Frontend developer?",
+    "description": "I'm actively seeking opportunities where I can contribute my Angular, TypeScript, and JavaScript expertise to create exceptional user experiences that drive business success.",
+    "needDeveloper": "Need a Front-End Developer?",
     "letsTalk": "Let's talk!",
     "form": {
       "nameLabel": "What's your name?",

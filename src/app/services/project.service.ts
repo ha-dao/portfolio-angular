@@ -1,48 +1,70 @@
 import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Project } from '../interfaces/project';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
-  private projects: Project[] = [
+  private projectsMetadata = [
     {
       id: '01',
-      name: 'Join',
-      description: 'What is this project about?',
-      longDescription: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      technologies: ['Firebase', 'Angular', 'Typescript', 'HTML', 'CSS'],
+      technologies: ['Firebase', 'Angular', 'TypeScript', 'HTML', 'CSS'],
       imageUrl: 'assets/img/4-projects/join-screenshot.png',
       liveUrl: 'https://join.ha-dao.de/',
-      githubUrl: 'https://github.com/ha-dao/join'
+      githubUrl: 'https://github.com/ha-dao/join-kanban-board'
     },
     {
       id: '02',
-      name: 'El Pollo Locco',
-      description: 'What is this project about?',
-      longDescription: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-      technologies: ['HTML', 'CSS', 'Javascript'],
+      technologies: ['JavaScript', 'HTML', 'CSS'],
       imageUrl: 'assets/img/4-projects/el-pollo-locco-screenshot.png',
       liveUrl: 'https://el-pollo-locco.ha-dao.de/',
       githubUrl: 'https://github.com/ha-dao/el-pollo-locco'
     },
     {
       id: '03',
-      name: 'DA Bubble',
-      description: 'What is this project about?',
-      longDescription: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
-      technologies: ['Angular', 'Firebase', 'Typescript'],
-      imageUrl: 'assets/img/4-projects/da-bubble-screenshot.png',
-      liveUrl: 'https://da-bubble.ha-dao.de/',
-      githubUrl: 'https://github.com/ha-dao/da-bubble'
+      technologies: ['Rest-API', 'JavaScript', 'HTML', 'CSS'],
+      imageUrl: 'assets/img/4-projects/pokedex-screenshot.png',
+      liveUrl: 'https://pokedex.ha-dao.de/',
+      githubUrl: 'https://github.com/ha-dao/pokedex'
     }
   ];
 
-  getAllProjects(): Project[] {
-    return this.projects;
+  constructor(private translateService: TranslateService) {}
+
+  getAllProjects(): Observable<Project[]> {
+    return this.translateService.get('projects').pipe(
+      map((translations: any) =>
+        this.projectsMetadata.map(metadata => {
+          const translatedProject = translations[metadata.id];
+          return {
+            ...metadata,
+            name: translatedProject?.name || `Project ${metadata.id}`,
+            description: translatedProject?.description || 'No description available',
+            longDescription: translatedProject?.longDescription || 'No detailed description available'
+          };
+        })
+      )
+    );
+  }
+
+  getAllProjectsSync(): Project[] {
+    const translations = this.translateService.instant('projects');
+
+    return this.projectsMetadata.map(metadata => {
+      const translatedProject = translations[metadata.id];
+      return {
+        ...metadata,
+        name: translatedProject?.name || `Project ${metadata.id}`,
+        description: translatedProject?.description || 'No description available',
+        longDescription: translatedProject?.longDescription || 'No detailed description available'
+      };
+    });
   }
 
   getProjectById(id: string): Project | undefined {
-    return this.projects.find(project => project.id === id);
+    const projects = this.getAllProjectsSync();
+    return projects.find(project => project.id === id);
   }
 }

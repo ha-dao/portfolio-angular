@@ -6,12 +6,13 @@ import { Injectable } from '@angular/core';
 export class TechIconService {
   private readonly iconMapping: Record<string, string> = {
     'Angular': 'assets/img/4-projects/tech-icons/angular.svg',
-    'Typescript': 'assets/img/4-projects/tech-icons/typescript.svg',
+    'TypeScript': 'assets/img/4-projects/tech-icons/typescript.svg',
     'HTML': 'assets/img/4-projects/tech-icons/html.svg',
     'CSS': 'assets/img/4-projects/tech-icons/css.svg',
     'Firebase': 'assets/img/4-projects/tech-icons/firebase.svg',
-    'Javascript': 'assets/img/4-projects/tech-icons/javascript.svg',
-    'Database': 'assets/img/4-projects/tech-icons/database.svg'
+    'JavaScript': 'assets/img/4-projects/tech-icons/javascript.svg',
+    'Database': 'assets/img/4-projects/tech-icons/database.svg',
+    'Rest-API': 'assets/img/4-projects/tech-icons/rest-api.svg',
   };
 
   constructor() { }

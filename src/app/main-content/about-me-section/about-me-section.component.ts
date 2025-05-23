@@ -11,7 +11,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './about-me-section.component.scss'
 })
 export class AboutMeSectionComponent {
-  imageUrl = 'assets/img/2-about-me/working.png';
+  imageUrl = 'assets/img/2-about-me/ha-dao.png';
 
   infoItems: AboutInfo[] = [
     {

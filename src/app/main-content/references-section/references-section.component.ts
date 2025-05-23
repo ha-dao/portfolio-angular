@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TestimonialService } from '../../services/testimonial.service';
+import { Testimonial } from '../../interfaces/testimonial';
 import { TestimonialItemComponent } from './testimonial-item/testimonial-item.component';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-references-section',
@@ -11,29 +13,47 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './references-section.component.html',
   styleUrls: ['./references-section.component.scss']
 })
-export class ReferencesSectionComponent {
+export class ReferencesSectionComponent implements OnInit, OnDestroy {
   activeIndex = 1;
+  testimonials: Testimonial[] = [];
 
   isDragging = false;
   startPosition = 0;
   currentOffset = 0;
 
-  constructor(public testimonialService: TestimonialService) {}
+  private langChangeSubscription?: Subscription;
 
-  get prevTestimonial() {
-    return this.testimonialService.getTestimonialAt(this.activeIndex - 1);
+  constructor(
+    private testimonialService: TestimonialService,
+    private translateService: TranslateService
+  ) {}
+
+  ngOnInit(): void {
+    this.loadTestimonials();
+
+    this.langChangeSubscription = this.translateService.onLangChange.subscribe(() => {
+      this.loadTestimonials();
+    });
   }
 
-  get currentTestimonial() {
-    return this.testimonialService.getTestimonialAt(this.activeIndex);
+  ngOnDestroy(): void {
+    this.langChangeSubscription?.unsubscribe();
   }
 
-  get nextTestimonial() {
-    return this.testimonialService.getTestimonialAt(this.activeIndex + 1);
+  private loadTestimonials(): void {
+    this.testimonials = this.testimonialService.getTestimonialsSync();
   }
 
-  get testimonials() {
-    return this.testimonialService.getTestimonials();
+  get prevTestimonial(): Testimonial {
+    return this.testimonialService.getTestimonialAt(this.activeIndex - 1, this.testimonials);
+  }
+
+  get currentTestimonial(): Testimonial {
+    return this.testimonialService.getTestimonialAt(this.activeIndex, this.testimonials);
+  }
+
+  get nextTestimonial(): Testimonial {
+    return this.testimonialService.getTestimonialAt(this.activeIndex + 1, this.testimonials);
   }
 
   handlePrevClick(): void {
@@ -49,7 +69,7 @@ export class ReferencesSectionComponent {
   }
 
   isActiveDot(index: number): boolean {
-    return this.testimonialService.getItemIndex(this.activeIndex) === index;
+    return this.testimonialService.getItemIndex(this.activeIndex, this.testimonials.length) === index;
   }
 
   getTransform(position: 'prev' | 'current' | 'next'): string {

@@ -1,7 +1,9 @@
 <div class="card-container" [class.active]="isActive">
-  <p>{{ getTranslatedText(testimonial) }}</p>
-  <div class="author-section">
-    <div class="divider-line"></div>
-    <span>{{ getTranslatedAuthor(testimonial) }}</span>
-  </div>
+  @if (testimonial && testimonial.text) {
+    <p>{{ testimonial.text }}</p>
+    <div class="author-section">
+      <div class="divider-line"></div>
+      <span>{{ testimonial.author }}</span>
+    </div>
+  }
 </div>

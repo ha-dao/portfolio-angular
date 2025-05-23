@@ -17,7 +17,7 @@
               (touchend)="handleTouchEnd($event, i)"
             >
               <td>
-                {{ 'projects.' + project.id + '.name' | translate }}
+                {{ project.name }}
                 @if (activeProjectId === project.id) {
                   <span class="arrow-icon"></span>
                 }
@@ -54,11 +54,11 @@
 
           <div class="project-info">
             <span class="project-number">{{ currentProject.id }}</span>
-            <h2 class="project-title">{{ 'projects.' + currentProject.id + '.name' | translate }}</h2>
-            <p class="project-description">{{ 'projects.' + currentProject.id + '.description' | translate }}</p>
+            <h2 class="project-title">{{ currentProject.name }}</h2>
+            <p class="project-description">{{ currentProject.description }}</p>
 
             <div class="project-long-description">
-              <p>{{ 'projects.' + currentProject.id + '.longDescription' | translate }}</p>
+              <p>{{ currentProject.longDescription }}</p>
             </div>
 
             <div class="project-technologies">

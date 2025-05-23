@@ -19,17 +19,17 @@
     "workingImageAlt": "Arbeitsbild",
     "headerText": "Wer ich bin",
     "title": "Über mich",
-    "introduction": "Hey, ich bin Ha! Schreibe einige Informationen über dich, die IT-bezogen sind. Warum bist du so begeistert vom Programmieren? Was ist deine Inspirationsquelle, um deine Programmierfähigkeiten zu verbessern?",
+    "introduction": "Hallo, ich bin Ha! Front-End Entwickler mit unerschöpflicher Leidenschaft dafür, kreative Ideen in beeindruckende digitale Erlebnisse zu verwandeln. Ich liebe es, visuelle Kreativität mit technischer Problemlösung zu verbinden! Von der Betreuung von 80+ Kundenwebsites bis hin zur Entwicklung interaktiver Web-Apps und Spiele – jedes Projekt befeuert meine Begeisterung für sauberen, effizienten Code. Was mich richtig antreibt? Wenn komplexe APIs durch intuitive Benutzeroberflächen zum Leben erwachen – das ist pure digitale Magie! Bereit, gemeinsam etwas Großartiges zu erschaffen? Lass es uns angehen!",
     "locationTitle": "Standort",
-    "locationDescription": "Wo befindest du dich? Wärst du offen für Remote-Arbeit oder eventuell bereit umzuziehen?",
+    "locationDescription": "Ich lebe in Güstrow und bin vollkommen offen für Remote-Arbeit und Umzüge bei spannenden Möglichkeiten!",
     "openmindedTitle": "Aufgeschlossen",
-    "openmindedDescription": "Zeige, dass du aufgeschlossen bist. Bist du begeistert davon, neue Technologien zu lernen und deine Fähigkeiten kontinuierlich zu verbessern?",
+    "openmindedDescription": "Ich erforsche ständig neue Frameworks und Technologien – jedes Tool ist eine Chance für bessere Lösungen.",
     "problemsolvingTitle": "Problemlösung",
-    "problemsolvingDescription": "Eine kurze Beschreibung deines Problemlösungsansatzes. Lernst du aus jeder Herausforderung, während du nach der effizientesten oder elegantesten Lösung suchst? Du kannst einige Schlüsselwörter wie analytisches Denken, Kreativität, Beharrlichkeit und Zusammenarbeit einbeziehen."
+    "problemsolvingDescription": "Herausforderungen gehe ich mit analytischem Denken und Kreativität an, um im Team elegante, effiziente Lösungen zu finden."
   },
   "skills": {
     "h2": "Fähigkeiten",
-    "pdescription": "Eine kurze Vorstellung deiner Fähigkeiten. Hebe deine Erfahrung mit verschiedenen Frontend-Technologien hervor und betone deine Offenheit, neue Technologien zu erlernen und dich an sie anzupassen. Zeige, wie wichtig es für dich ist, mit den schnellen Veränderungen in der Webentwicklung Schritt zu halten.",
+    "pdescription": "Meine Kernkompetenzen liegen in JavaScript, Angular und TypeScript für professionelle Anwendungen. Ich habe erfolgreich Task-Management-Systeme entwickelt, PokeAPI für interaktive Web-Erlebnisse integriert und responsive Single-Page-Applications mit modernen Entwicklungsworkflows umgesetzt. Besonders begeistert mich das Erkunden neuer Angular-Features, fortgeschrittener TypeScript-Patterns und aktueller JavaScript-Ecosystem-Updates, um innovative Lösungen zu schaffen.",
     "technologies": "Technologien",
     "needAnother": "Du benötigst",
     "anotherSkill": "eine andere Fähigkeit?",
@@ -56,9 +56,9 @@
       "longDescription": "Sprung-, Lauf- und Wurfspiel basierend auf objektorientiertem Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen."
     },
     "03": {
-      "name": "DA Bubble",
+      "name": "Pokédex",
       "description": "Worum geht es in diesem Projekt?",
-      "longDescription": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robuster Kanalorganisation."
+      "longDescription": "Dieses Pokédex wurde in Zusammenhang mit PokéAPI erstellt. Man kann hier auch nach einen Lieblingspokémon suchen und dazu alle nötigen Informationen einsehen."
     }
   },
   "references": {
@@ -68,16 +68,28 @@
     "nextAlt": "Nächste",
     "testimonials": [
       {
-        "text": "Unser Projekt hat enorm von Lukas' effizienter Arbeitsweise profitiert.",
-        "author": "T.Schulz - Frontend Entwickler"
+        "text": "Die Zusammenarbeit mit Ha war wirklich eine Bereicherung. Er überzeugte durch sein ausgeprägtes Gespür für Design und sein außergewöhnliches Auge fürs Detail. Mit seinem Einsatz und Ehrgeiz hat er das ganze Team motiviert und stets nach dem bestmöglichen Ergebnis gestrebt – „gut genug“ war für ihn nie eine Option. Sein Engagement und seine Energie haben entscheidend zum Erfolg unserer Projekte beigetragen.",
+        "author": "Christian Duus - Frontend Developer"
       },
       {
-        "text": "Lukas hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
-        "author": "H.Janisch - Team Partner"
+        "text": "Ha hat sich durch seine hervorragenden Designfähigkeiten hervorgetan und gleichzeitig gezeigt, dass er auch im Bereich Programmierung stark ist. Mit seiner Kreativität und seinem Sinn für Humor hat er stets für eine positive Stimmung im Team gesorgt und die Zusammenarbeit bereichert. Die Arbeit mit ihm war durchweg angenehm und inspirierend.",
+        "author": "Soufiane Nouira - Frontend Developer"
       },
       {
-        "text": "Ich hatte das Glück, mit Simon an einem aufwändigen Gruppenprojekt an der Developer Akademie zu arbeiten. Er blieb immer ruhig, gelassen und konzentriert und stellte sicher, dass unser Team auf Erfolg ausgerichtet war. Er ist super sachkundig, einfach in der Zusammenarbeit, und ich würde gerne wieder mit ihm arbeiten, wenn sich die Gelegenheit bietet.",
-        "author": "A. Fischer - Team Partner"
+        "text": "Ich hatte das Vergnügen, mit Ha Dao am Kochwelt-Projekt zu arbeiten – eine Erfahrung, die mich fachlich und persönlich sehr bereichert hat. Mit seinem umfassenden Know-how und seiner Expertise hat Ha unser Team enorm weitergebracht und viele neue Perspektiven eröffnet. Besonders geschätzt habe ich seine hilfreichen Tipps, Tricks und Ratschläge. Ha war stets zuverlässig und professionell, was die Zusammenarbeit am Code effizient und reibungslos machte. Durch seine Fachkenntnisse und seine engagierte Arbeitsweise war er ein echter Gewinn für unser Team. Vielen Dank, Ha, für deine großartige Unterstützung und die inspirierende Zusammenarbeit!",
+        "author": "Jonathan Michutta - Frontend Developer"
+      },
+      {
+        "text": "Ich durfte mit Ha an einem Website-Projekt zusammenarbeiten und habe ihn dabei als äußerst kompetent erlebt. Er fand stets durchdachte und wirksame Lösungen und erklärte seine Ansätze so, dass sie für das gesamte Team nachvollziehbar waren. Wenn es Kritik an einem Vorschlag gab, hat er sich offen und konstruktiv eingebracht, um gemeinsam mit dem Team eine Lösung zu finden, die alle überzeugt.",
+        "author": "Taher Abdel Megid - Frontend Developer"
+      },
+      {
+        "text": "Im Rahmen eines Gruppenprojekts hatte ich die Möglichkeit, mit Ha zusammenzuarbeiten. Er übernahm die Verantwortung für das Design und das Styling der Anwendung – und setzte diese Aufgabe mit großer Sorgfalt und hoher Qualität um. Sein Gespür für Gestaltung und Nutzererlebnis war beeindruckend. Besonders hervorzuheben ist, wie konsequent und professionell er das visuelle Gesamtkonzept umgesetzt hat. Ha brachte nicht nur kreative Ideen ein, sondern überzeugte auch durch deren saubere und durchdachte Umsetzung – ein wichtiger Beitrag zum Erfolg unseres Projekts. Ha ist ein engagierter, zuverlässiger und sehr kompetenter Teamplayer im Bereich Design und visuelle Entwicklung.",
+        "author": "Marvin Schneemann - Frontend Developer"
+      },
+      {
+        "text": "Die Zusammenarbeit mit Ha im Team habe ich sehr genossen. Besonders beeindruckt hat mich seine strukturierte und lösungsorientierte Herangehensweise beim Programmieren. Er bringt nicht nur fundiertes technisches Wissen mit, sondern kann auch komplexe Probleme schnell erfassen und kreative Lösungswege finden. Durch seine offene Kommunikation und Teamfähigkeit hat er maßgeblich zum Erfolg unseres Projekts beigetragen. Ich bin überzeugt, dass Ha mit seinen Fähigkeiten und seinem Engagement für jedes Team eine wertvolle Bereicherung ist.",
+        "author": "Mihaela Melania Aghirculesei - Frontend Developer"
       }
     ]
   },
@@ -85,8 +97,8 @@
     "title": "Kontaktiere mich",
     "heading": "Lass uns zusammenarbeiten",
     "subheading": "Hast du ein Problem zu lösen?",
-    "description": "Ermutige Leute, dich zu kontaktieren und beschreibe, für welche Rolle du dich interessierst. Zeige, dass du durch deine Arbeit einen Mehrwert für ihre Projekte schaffen wirst.",
-    "needDeveloper": "Brauchst du einen Frontend-Entwickler?",
+    "description": "Ich suche aktiv nach spannende Möglichkeiten in denen ich mit meiner Angular-, TypeScript- und JavaScript-Expertise außergewöhnliche Benutzererlebnisse schaffen kann, die den Geschäftserfolg vorantreiben.",
+    "needDeveloper": "Brauchst du einen Front-End Entwickler?",
     "letsTalk": "Lass uns reden!",
     "form": {
       "nameLabel": "Wie ist dein Name?",

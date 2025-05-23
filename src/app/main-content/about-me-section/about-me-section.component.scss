@@ -26,7 +26,7 @@
     height: 100%;
     border-radius: 40px;
     object-fit: cover;
-    object-position: top center;
+    object-position: bottom center;
     transition: all 300ms ease;
     &:hover {
       transform: translate(25px, -25px);
