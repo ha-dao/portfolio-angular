@@ -45,6 +45,10 @@
     "explore": "Entdecke eine Auswahl meiner Arbeiten hier - Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
     "liveTest": "Live-Test",
     "nextProject": "Nächstes Projekt",
+    "wordpressProjects": "WordPress Projekte mit Low-Code",
+    "wordpressProjectsDescription": "Hier sind fast alle CMS Projekte, welches ich bei ttmedia selbstständig umgesetzt habe von den 80+ betreuten Projekten",
+    "wordpressReferenzen": "Referenzen",
+    "website": "Webseite",
     "01": {
       "name": "Join",
       "description": "Worum geht es in diesem Projekt?",
@@ -61,6 +65,108 @@
       "longDescription": "Dieses Pokédex wurde in Zusammenhang mit PokéAPI erstellt. Man kann hier auch nach einen Lieblingspokémon suchen und dazu alle nötigen Informationen einsehen."
     }
   },
+  "wordpressProjects": {
+    "wp01": {
+      "logoAlt": "Berlinerfinanzmanufaktur Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Umsetzung"]
+    },
+    "wp02": {
+      "logoAlt": "Bestattungshaus Logo",
+      "technologies": ["WordPress", "Elementor", "Umsetzung"]
+    },
+    "wp03": {
+      "logoAlt": "Friedhof Güstrow Logo",
+      "technologies": ["WordPress", "Elementor", "Umsetzung"]
+    },
+    "wp04": {
+      "logoAlt": "ABC office24 Logo",
+      "technologies": ["WordPress", "Elementor", "Umsetzung"]
+    },
+    "wp05": {
+      "logoAlt": "Beerdigungsinstitut Weber Logo",
+      "technologies": ["WordPress", "Elementor", "Umsetzung"]
+    },
+    "wp06": {
+      "logoAlt": "Freitag Tischlerei Logo",
+      "technologies": ["WordPress", "Elementor", "Umsetzung"]
+    },
+    "wp07": {
+      "logoAlt": "Fritz Schulz Logo",
+      "technologies": ["WordPress", "Elementor", "Umsetzung"]
+    },
+    "wp08": {
+      "logoAlt": "Goodquest Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Umsetzung"]
+    },
+    "wp09": {
+      "logoAlt": "HIT Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Umsetzung"]
+    },
+    "wp10": {
+      "logoAlt": "IC Individual Cosmetics Logo",
+      "technologies": ["WordPress", "Elementor", "Shopify", "Umsetzung"]
+    },
+    "wp11": {
+      "logoAlt": "Inspektorenhaus Logo",
+      "technologies": ["WordPress", "Elementor", "Logo", "Design", "Umsetzung"]
+    },
+    "wp12": {
+      "logoAlt": "René Junghans Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Umsetzung"]
+    },
+    "wp13": {
+      "logoAlt": "Jimmy Versicherung Logo",
+      "technologies": ["WordPress", "Elementor", "Umsetzung"]
+    },
+    "wp14": {
+      "logoAlt": "Jimmy Zusatzversicherung Logo",
+      "technologies": ["WordPress", "Elementor", "Umsetzung"]
+    },
+    "wp16": {
+      "logoAlt": "Meat Point Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Umsetzung"]
+    },
+    "wp17": {
+      "logoAlt": "Wohnungsauflösung MV Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Umsetzung"]
+    },
+    "wp18": {
+      "logoAlt": "Radiologie Packebusch Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Umsetzung"]
+    },
+    "wp19": {
+      "logoAlt": "Nico Dudek Logo",
+      "technologies": ["WordPress", "Elementor", "Logo", "Design", "Umsetzung"]
+    },
+    "wp20": {
+      "logoAlt": "Ostsee Heu Logo",
+      "technologies": ["WordPress", "Elementor", "Logo", "Design", "Umsetzung"]
+    },
+    "wp21": {
+      "logoAlt": "Praxis Diering Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Umsetzung"]
+    },
+    "wp22": {
+      "logoAlt": "NeuWerk Logo",
+      "technologies": ["WordPress", "Elementor", "Programmierung", "Design", "Umsetzung"]
+    },
+    "wp23": {
+      "logoAlt": "Reha Gardersee Logo",
+      "technologies": ["WordPress", "Elementor", "Programmierung", "Design", "Umsetzung"]
+    },
+    "wp24": {
+      "logoAlt": "Skoda Service Logo",
+      "technologies": ["WordPress", "Elementor", "Programmierung", "Design", "Umsetzung"]
+    },
+    "wp25": {
+      "logoAlt": "Mecklenburger Textildruck Logo",
+      "technologies": ["WordPress", "Elementor", "Preisrechner", "Programmierung", "Design", "Umsetzung", "JavaScript", "JQuery"]
+    },
+    "wp26": {
+      "logoAlt": "Unternehmen mit Strahlkraft Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Umsetzung"]
+    }
+  },
   "references": {
     "heading": "Was meine Kollegen über mich sagen",
     "quotesAlt": "Zitat-Symbol",
@@ -68,7 +174,7 @@
     "nextAlt": "Nächste",
     "testimonials": [
       {
-        "text": "Die Zusammenarbeit mit Ha war wirklich eine Bereicherung. Er überzeugte durch sein ausgeprägtes Gespür für Design und sein außergewöhnliches Auge fürs Detail. Mit seinem Einsatz und Ehrgeiz hat er das ganze Team motiviert und stets nach dem bestmöglichen Ergebnis gestrebt – „gut genug“ war für ihn nie eine Option. Sein Engagement und seine Energie haben entscheidend zum Erfolg unserer Projekte beigetragen.",
+        "text": "Die Zusammenarbeit mit Ha war wirklich eine Bereicherung. Er überzeugte durch sein ausgeprägtes Gespür für Design und sein außergewöhnliches Auge fürs Detail. Mit seinem Einsatz und Ehrgeiz hat er das ganze Team motiviert und stets nach dem bestmöglichen Ergebnis gestrebt – 'gut genug' war für ihn nie eine Option. Sein Engagement und seine Energie haben entscheidend zum Erfolg unserer Projekte beigetragen.",
         "author": "Christian Duus - Frontend Developer"
       },
       {

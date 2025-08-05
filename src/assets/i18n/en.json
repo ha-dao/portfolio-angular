@@ -45,6 +45,10 @@
     "explore": "Explore a selection of my work here - Interact with projects to see my skills in action.",
     "liveTest": "Live Test",
     "nextProject": "Next Project",
+    "wordpressProjects": "WordPress Projects with Low-Code",
+    "wordpressProjectsDescription": "These are nearly all of the CMS projects I independently implemented at ttmedia, selected from the 80+ projects I managed.",
+    "wordpressReferenzen": "References",
+    "website": "Website",
     "01": {
       "name": "Join",
       "description": "What is this project about?",
@@ -61,6 +65,108 @@
       "longDescription": "This Pokédex was created using the PokéAPI. You can search for your favorite Pokémon and view all the important information about it."
     }
   },
+  "wordpressProjects": {
+    "wp01": {
+      "logoAlt": "Berlinerfinanzmanufaktur Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Implementation"]
+    },
+    "wp02": {
+      "logoAlt": "Bestattungshaus Logo",
+      "technologies": ["WordPress", "Elementor", "Implementation"]
+    },
+    "wp03": {
+      "logoAlt": "Friedhof Güstrow Logo",
+      "technologies": ["WordPress", "Elementor", "Implementation"]
+    },
+    "wp04": {
+      "logoAlt": "ABC office24 Logo",
+      "technologies": ["WordPress", "Elementor", "Implementation"]
+    },
+    "wp05": {
+      "logoAlt": "Beerdigungsinstitut Weber Logo",
+      "technologies": ["WordPress", "Elementor", "Implementation"]
+    },
+    "wp06": {
+      "logoAlt": "Freitag Tischlerei Logo",
+      "technologies": ["WordPress", "Elementor", "Implementation"]
+    },
+    "wp07": {
+      "logoAlt": "Fritz Schulz Logo",
+      "technologies": ["WordPress", "Elementor", "Implementation"]
+    },
+    "wp08": {
+      "logoAlt": "Goodquest Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Implementation"]
+    },
+    "wp09": {
+      "logoAlt": "HIT Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Implementation"]
+    },
+    "wp10": {
+      "logoAlt": "IC Individual Cosmetics Logo",
+      "technologies": ["WordPress", "Elementor", "Shopify", "Implementation"]
+    },
+    "wp11": {
+      "logoAlt": "Inspektorenhaus Logo",
+      "technologies": ["WordPress", "Elementor", "Logo", "Design", "Implementation"]
+    },
+    "wp12": {
+      "logoAlt": "René Junghans Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Implementation"]
+    },
+    "wp13": {
+      "logoAlt": "Jimmy Versicherung Logo",
+      "technologies": ["WordPress", "Elementor", "Implementation"]
+    },
+    "wp14": {
+      "logoAlt": "Jimmy Zusatzversicherung Logo",
+      "technologies": ["WordPress", "Elementor", "Implementation"]
+    },
+    "wp16": {
+      "logoAlt": "Meat Point Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Implementation"]
+    },
+    "wp17": {
+      "logoAlt": "Wohnungsauflösung MV Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Implementation"]
+    },
+    "wp18": {
+      "logoAlt": "Radiologie Packebusch Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Implementation"]
+    },
+    "wp19": {
+      "logoAlt": "Nico Dudek Logo",
+      "technologies": ["WordPress", "Elementor", "Logo", "Design", "Implementation"]
+    },
+    "wp20": {
+      "logoAlt": "Ostsee Heu Logo",
+      "technologies": ["WordPress", "Elementor", "Logo", "Design", "Implementation"]
+    },
+    "wp21": {
+      "logoAlt": "Praxis Diering Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Implementation"]
+    },
+    "wp22": {
+      "logoAlt": "NeuWerk Logo",
+      "technologies": ["WordPress", "Elementor", "Programming", "Design", "Implementation"]
+    },
+    "wp23": {
+      "logoAlt": "Reha Gardersee Logo",
+      "technologies": ["WordPress", "Elementor", "Programming", "Design", "Implementation"]
+    },
+    "wp24": {
+      "logoAlt": "Skoda Service Logo",
+      "technologies": ["WordPress", "Elementor", "Programming", "Design", "Implementation"]
+    },
+    "wp25": {
+      "logoAlt": "Mecklenburger Textildruck Logo",
+      "technologies": ["WordPress", "Elementor", "Price Calculator", "Programming", "Design", "Implementation", "JavaScript", "JQuery"]
+    },
+    "wp26": {
+      "logoAlt": "Unternehmen mit Strahlkraft Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Implementation"]
+    }
+  },
   "references": {
     "heading": "What my colleagues say about me",
     "quotesAlt": "Quotes Icon",
@@ -68,7 +174,7 @@
     "nextAlt": "Next",
     "testimonials": [
       {
-        "text": "Working with Ha was a real pleasure. He consistently demonstrated a keen eye for design and an exceptional attention to detail. His dedication and drive pushed the entire team forward, and he never settled for “good enough” — only considering a task complete when every detail was just right. His commitment and energy made a real difference to the success of our projects.",
+        "text": "Working with Ha was a real pleasure. He consistently demonstrated a keen eye for design and an exceptional attention to detail. His dedication and drive pushed the entire team forward, and he never settled for 'good enough' — only considering a task complete when every detail was just right. His commitment and energy made a real difference to the success of our projects.",
         "author": "Christian Duus - Team Partner"
       },
       {
@@ -88,7 +194,7 @@
         "author": "Marvin Schneemann - Team Partner"
       },
       {
-        "text": "I really enjoyed working with Ha on the team. I was especially impressed by his structured and solution-oriented approach to programming. Ha not only brings solid technical knowledge but also the ability to quickly analyze complex problems and find creative solutions. Through his open communication and teamwork skills, he significantly contributed to the success of our project. I am confident that Ha’s strengths and dedication will be a great asset to any team in the future",
+        "text": "I really enjoyed working with Ha on the team. I was especially impressed by his structured and solution-oriented approach to programming. Ha not only brings solid technical knowledge but also the ability to quickly analyze complex problems and find creative solutions. Through his open communication and teamwork skills, he significantly contributed to the success of our project. I am confident that Ha's strengths and dedication will be a great asset to any team in the future",
         "author": "Mihaela Melania Aghirculesei - Team Partner"
       }
     ]

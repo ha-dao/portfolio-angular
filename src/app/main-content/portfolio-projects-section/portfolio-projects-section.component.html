@@ -1,106 +1,196 @@
 <section id="projects">
   <div class="content-width">
-    <h3>{{ 'projects.portfolio' | translate }}</h3>
-    <h2>{{ 'projects.featuredProjects' | translate }}</h2>
-    <p>{{ 'projects.explore' | translate }}</p>
+    <h3>{{ "projects.portfolio" | translate }}</h3>
+    <h2>{{ "projects.featuredProjects" | translate }}</h2>
+    <p>{{ "projects.explore" | translate }}</p>
 
     <div class="projects-container">
       <table #projectsTable>
         <tbody>
           @for (project of projects; track project.id; let i = $index) {
-            <tr
-              [id]="'project-' + project.id"
-              (mouseenter)="setActiveProject(project.id, $event)"
-              (mouseleave)="clearActiveProject()"
-              (click)="openModal(i)"
-              (touchstart)="handleTouchStart($event, project.id)"
-              (touchend)="handleTouchEnd($event, i)"
-            >
-              <td>
-                {{ project.name }}
-                @if (activeProjectId === project.id) {
-                  <span class="arrow-icon"></span>
-                }
-              </td>
-              <td>
-                @for (tech of project.technologies; track tech; let last = $last) {
-                  {{ tech }}
-                  @if (!last) {
-                    <span class="tech-separator"> | </span>
-                  }
-                }
-              </td>
-            </tr>
+          <tr
+            [id]="'project-' + project.id"
+            (mouseenter)="setActiveProject(project.id, $event)"
+            (mouseleave)="clearActiveProject()"
+            (click)="openModal(i)"
+            (touchstart)="handleTouchStart($event, project.id)"
+            (touchend)="handleTouchEnd($event, i)"
+          >
+            <td>
+              {{ project.name }}
+              @if (activeProjectId === project.id) {
+              <span class="arrow-icon"></span>
+              }
+            </td>
+            <td>
+              @for (tech of project.technologies; track tech; let last = $last)
+              {
+              {{ tech }}
+              @if (!last) {
+              <span class="tech-separator"> | </span>
+              } }
+            </td>
+          </tr>
           }
         </tbody>
       </table>
 
-      @if (activeProjectId && !showModal && hoverPosition !== null) {
-        <div class="projects-hover-content" [style.top.px]="hoverPosition">
-          <figure>
-            <img [src]="getActiveProjectImage()" [alt]="getProjectScreenshotAlt(activeProjectId)">
-          </figure>
-        </div>
+      <section
+        class="wordpress-section"
+        (click)="openWordpressModal()"
+        (touchend)="openWordpressModal()"
+      >
+        <h3 class="wordpress-title">
+          {{ "projects.wordpressProjects" | translate }}
+        </h3>
+        <p>
+          {{ "projects.wordpressProjectsDescription" | translate }}
+        </p>
+      </section>
+
+      @if (activeProjectId && !showModal && !showWordpressModal && hoverPosition
+      !== null) {
+      <div class="projects-hover-content" [style.top.px]="hoverPosition">
+        <figure>
+          <img
+            [src]="getActiveProjectImage()"
+            [alt]="getProjectScreenshotAlt(activeProjectId)"
+          />
+        </figure>
+      </div>
       }
     </div>
   </div>
 
   @if (showModal) {
-    <div class="project-modal-overlay">
-      <div class="project-modal-backdrop" (click)="closeModal()"></div>
+  <div class="project-modal-overlay">
+    <div class="project-modal-backdrop" (click)="closeModal()"></div>
 
-      <div class="project-modal" [class.landscape-mode]="isLandscape">
-        <div class="project-modal-content" [class.landscape-mode]="isLandscape">
+    <div class="project-modal" [class.landscape-mode]="isLandscape">
+      <div class="project-modal-content" [class.landscape-mode]="isLandscape">
+        <div class="project-info">
+          <span class="project-number">{{ currentProject.id }}</span>
+          <h2 class="project-title">{{ currentProject.name }}</h2>
+          <p class="project-description">{{ currentProject.description }}</p>
 
-          <div class="project-info">
-            <span class="project-number">{{ currentProject.id }}</span>
-            <h2 class="project-title">{{ currentProject.name }}</h2>
-            <p class="project-description">{{ currentProject.description }}</p>
+          <div class="project-long-description">
+            <p>{{ currentProject.longDescription }}</p>
+          </div>
 
-            <div class="project-long-description">
-              <p>{{ currentProject.longDescription }}</p>
-            </div>
-
-            <div class="project-technologies">
-              <div class="tech-tags">
-                @for (tech of currentProject.technologies; track tech) {
-                  <span class="tech-tag">
-                    @if (hasTechIcon(tech)) {
-                      <img [src]="getTechIconPath(tech)" class="tech-icon" alt="{{ tech }} icon">
-                    }
-                    {{ tech }}
-                  </span>
+          <div class="project-technologies">
+            <div class="tech-tags">
+              @for (tech of currentProject.technologies; track tech) {
+              <span class="tech-tag">
+                @if (hasTechIcon(tech)) {
+                <img
+                  [src]="getTechIconPath(tech)"
+                  class="tech-icon"
+                  alt="{{ tech }} icon"
+                />
                 }
-              </div>
-            </div>
-
-            <div class="project-buttons">
-              <a [href]="currentProject.githubUrl" target="_blank" rel="noopener noreferrer" class="link-button2">
-                GitHub
-              </a>
-              <a [href]="currentProject.liveUrl" target="_blank" rel="noopener noreferrer" class="link-button2">
-                {{ 'projects.liveTest' | translate }}
-              </a>
+                {{ tech }}
+              </span>
+              }
             </div>
           </div>
 
-          <div class="project-image-container">
-            <button class="close-button" (click)="closeModal()" (touchend)="closeModal()">
-              <span class="close-icon"></span>
-            </button>
-
-            <div class="project-image">
-              <img [src]="currentProject.imageUrl" [alt]="getProjectScreenshotAlt(currentProject.id)">
-            </div>
+          <div class="project-buttons">
+            <a
+              [href]="currentProject.githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-button2"
+            >
+              GitHub
+            </a>
+            <a
+              [href]="currentProject.liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-button2"
+            >
+              {{ "projects.liveTest" | translate }}
+            </a>
           </div>
         </div>
 
-        <div class="project-modal-footer">
-          <button class="next-project-button" (click)="goToNextProject()" (touchend)="goToNextProject()">
-            {{ getNextProjectText() }}
+        <div class="project-image-container">
+          <button
+            class="close-button"
+            (click)="closeModal()"
+            (touchend)="closeModal()"
+          >
+            <span class="close-icon"></span>
           </button>
+
+          <div class="project-image">
+            <img
+              [src]="currentProject.imageUrl"
+              [alt]="getProjectScreenshotAlt(currentProject.id)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="project-modal-footer">
+        <button
+          class="next-project-button"
+          (click)="goToNextProject()"
+          (touchend)="goToNextProject()"
+        >
+          {{ getNextProjectText() }}
+        </button>
+      </div>
+    </div>
+  </div>
+  } @if (showWordpressModal) {
+  <div class="wordpress-modal-overlay">
+    <div class="wordpress-modal-backdrop" (click)="closeWordpressModal()"></div>
+
+    <div class="wordpress-modal">
+      <div class="wordpress-modal-header">
+        <h2>{{ "projects.wordpressReferenzen" | translate }}</h2>
+        <button
+          class="close-button"
+          (click)="closeWordpressModal()"
+          (touchend)="closeWordpressModal()"
+        >
+          <span class="close-icon"></span>
+        </button>
+      </div>
+
+      <div class="wordpress-modal-content">
+        <div class="wordpress-grid">
+          @for (wpProject of wordpressProjects; track wpProject.id) {
+          <div class="wordpress-item">
+            <div class="web-text">
+              @for (tech of wpProject.technologies; track tech) {
+              <span>#{{ tech }}</span>
+              }
+            </div>
+            <div
+              class="wordpress-logo-container"
+              [class.white-background]="wpProject.hasWhiteBackground"
+            >
+              <img
+                [src]="wpProject.logoUrl"
+                [alt]="wpProject.logoAlt"
+                [class.specific-img]="wpProject.isSpecificImg"
+              />
+            </div>
+            <a
+              class="web-button"
+              [href]="wpProject.websiteUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ "projects.website" | translate }}
+            </a>
+          </div>
+          }
         </div>
       </div>
     </div>
+  </div>
   }
 </section>

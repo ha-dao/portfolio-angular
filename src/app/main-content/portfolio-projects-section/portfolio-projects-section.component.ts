@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, OnDestroy, HostListener } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../interfaces/project';
+import { WordpressProject } from '../../interfaces/wordpress-project';
 import { TechIconService } from '../../services/tech-icons.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -16,9 +17,12 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
   @ViewChild('projectsTable') projectsTable!: ElementRef;
 
   projects: Project[] = [];
+  wordpressProjects: WordpressProject[] = [];
+  wordpressProjectsDescription: WordpressProject[] = [];
   activeProjectId: string | null = null;
   hoverPosition: number | null = null;
   showModal = false;
+  showWordpressModal = false;
   currentProjectIndex = 0;
   isLandscape = false;
   private resizeSubscription?: Subscription;
@@ -36,9 +40,11 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadProjects();
+    this.loadWordpressProjects();
 
     this.langChangeSubscription = this.translateService.onLangChange.subscribe(() => {
       this.loadProjects();
+      this.loadWordpressProjects();
     });
 
     this.checkOrientation();
@@ -55,6 +61,10 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
     this.projects = this.projectService.getAllProjectsSync();
   }
 
+  private loadWordpressProjects(): void {
+    this.wordpressProjects = this.projectService.getAllWordpressProjectsSync();
+  }
+
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.checkOrientation();
@@ -63,6 +73,16 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
   @HostListener('window:orientationchange', ['$event'])
   onOrientationChange() {
     this.checkOrientation();
+  }
+
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscapeKey() {
+    if (this.showModal) {
+      this.closeModal();
+    }
+    if (this.showWordpressModal) {
+      this.closeWordpressModal();
+    }
   }
 
   private checkOrientation(): void {
@@ -140,6 +160,16 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
 
   goToNextProject(): void {
     this.currentProjectIndex = (this.currentProjectIndex + 1) % this.projects.length;
+  }
+
+  openWordpressModal(): void {
+    this.showWordpressModal = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeWordpressModal(): void {
+    this.showWordpressModal = false;
+    document.body.style.overflow = 'auto';
   }
 
   get currentProject(): Project {
