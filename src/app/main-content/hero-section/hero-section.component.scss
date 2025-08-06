@@ -113,6 +113,10 @@ app-infinite-banner {
 }
 
 @media (max-width: 768px) {
+  app-infinite-banner {
+    display: none;
+  }
+  
   #hero-section {
     .content-width {
       h1 {
