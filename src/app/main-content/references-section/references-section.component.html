@@ -1,48 +1,41 @@
-<section id="references">
+<section id="references"
+         (touchstart)="onTouchStart($event)"
+         (touchend)="onTouchEnd($event)">
   <div class="content-width">
     <h3>{{ 'references.heading' | translate }}</h3>
 
     <div class="carousel-container">
       <div class="carousel-wrapper">
-        <div class="carousel-inner">
+        <div class="carousel-track">
 
-          <div class="testimonial-slot prev-slot"
-               [style.transform]="getTransform('prev')"
-               [style.transition]="getTransition()">
-            <app-testimonial-item
-              [testimonial]="prevTestimonial"
-              [isActive]="false">
-            </app-testimonial-item>
-          </div>
+          @for (testimonial of testimonials; track testimonial.index) {
+            <div class="testimonial-card"
+                 [class]="getCardClass($index)"
+                 (click)="handleCardClick($index)">
+              <app-testimonial-item
+                [testimonial]="testimonial"
+                [isActive]="isActiveTestimonial($index)">
+              </app-testimonial-item>
+            </div>
+          }
 
-          <div class="testimonial-slot current-slot"
-               [style.transform]="getTransform('current')"
-               [style.transition]="getTransition()">
-            <app-testimonial-item
-              [testimonial]="currentTestimonial"
-              [isActive]="true">
-            </app-testimonial-item>
-          </div>
-
-          <div class="testimonial-slot next-slot"
-               [style.transform]="getTransform('next')"
-               [style.transition]="getTransition()">
-            <app-testimonial-item
-              [testimonial]="nextTestimonial"
-              [isActive]="false">
-            </app-testimonial-item>
-          </div>
         </div>
 
         <div class="gradient-overlay left"></div>
         <div class="gradient-overlay right"></div>
       </div>
-      <img src="assets/img/5-reference/quotes.svg" alt="{{ 'references.quotesAlt' | translate }}" id="quotes-icon">
+
+      <img src="assets/img/5-reference/quotes.svg"
+           alt="{{ 'references.quotesAlt' | translate }}"
+           id="quotes-icon">
+
       <div class="navigation">
-        <img src="assets/img/5-reference/arrow_back.svg"
-             alt="{{ 'references.previousAlt' | translate }}"
-             class="nav-arrow"
-             (click)="handlePrevClick()">
+        <button class="nav-arrow left"
+                (click)="handlePrevClick()"
+                [disabled]="isAnimating">
+          <img src="assets/img/5-reference/arrow_back.svg"
+               alt="{{ 'references.previousAlt' | translate }}">
+        </button>
 
         <div class="indicators">
           @for (testimonial of testimonials; track $index) {
@@ -53,10 +46,12 @@
           }
         </div>
 
-        <img src="assets/img/5-reference/arrow_forward.svg"
-             alt="{{ 'references.nextAlt' | translate }}"
-             class="nav-arrow"
-             (click)="handleNextClick()">
+        <button class="nav-arrow right"
+                (click)="handleNextClick()"
+                [disabled]="isAnimating">
+          <img src="assets/img/5-reference/arrow_forward.svg"
+               alt="{{ 'references.nextAlt' | translate }}">
+        </button>
       </div>
     </div>
   </div>
