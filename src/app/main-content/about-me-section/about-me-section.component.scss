@@ -86,7 +86,7 @@
   }
 
   .about-img-box {
-    width: 100%;
+    width: 50%;
   }
 
   .about-me-text-box {
@@ -97,6 +97,12 @@
         font-size: 40px;
       }
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-img-box {
+    width: 100%;
   }
 }
 
