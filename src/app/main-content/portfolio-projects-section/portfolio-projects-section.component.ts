@@ -18,7 +18,6 @@ export class PortfolioProjectsSectionComponent implements OnInit, OnDestroy {
 
   projects: Project[] = [];
   wordpressProjects: WordpressProject[] = [];
-  wordpressProjectsDescription: WordpressProject[] = [];
   activeProjectId: string | null = null;
   hoverPosition: number | null = null;
   showModal = false;
