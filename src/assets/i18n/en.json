@@ -122,6 +122,10 @@
       "logoAlt": "Jimmy Zusatzversicherung Logo",
       "technologies": ["WordPress", "Elementor", "Implementation"]
     },
+    "wp15": {
+      "logoAlt": "LAC Leichtathletikclub Mühl Rosin Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Implementation", "JavaScript", "JQuery"]
+    },
     "wp16": {
       "logoAlt": "Meat Point Logo",
       "technologies": ["WordPress", "Elementor", "Design", "Implementation"]

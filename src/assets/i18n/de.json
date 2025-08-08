@@ -122,6 +122,10 @@
       "logoAlt": "Jimmy Zusatzversicherung Logo",
       "technologies": ["WordPress", "Elementor", "Umsetzung"]
     },
+    "wp15": {
+      "logoAlt": "LAC Leichtathletikclub Mühl Rosin Logo",
+      "technologies": ["WordPress", "Elementor", "Design", "Umsetzung", "JavaScript", "JQuery"]
+    },
     "wp16": {
       "logoAlt": "Meat Point Logo",
       "technologies": ["WordPress", "Elementor", "Design", "Umsetzung"]
@@ -148,19 +152,46 @@
     },
     "wp22": {
       "logoAlt": "NeuWerk Logo",
-      "technologies": ["WordPress", "Elementor", "Programmierung", "Design", "Umsetzung"]
+      "technologies": [
+        "WordPress",
+        "Elementor",
+        "Programmierung",
+        "Design",
+        "Umsetzung"
+      ]
     },
     "wp23": {
       "logoAlt": "Reha Gardersee Logo",
-      "technologies": ["WordPress", "Elementor", "Programmierung", "Design", "Umsetzung"]
+      "technologies": [
+        "WordPress",
+        "Elementor",
+        "Programmierung",
+        "Design",
+        "Umsetzung"
+      ]
     },
     "wp24": {
       "logoAlt": "Skoda Service Logo",
-      "technologies": ["WordPress", "Elementor", "Programmierung", "Design", "Umsetzung"]
+      "technologies": [
+        "WordPress",
+        "Elementor",
+        "Programmierung",
+        "Design",
+        "Umsetzung"
+      ]
     },
     "wp25": {
       "logoAlt": "Mecklenburger Textildruck Logo",
-      "technologies": ["WordPress", "Elementor", "Preisrechner", "Programmierung", "Design", "Umsetzung", "JavaScript", "JQuery"]
+      "technologies": [
+        "WordPress",
+        "Elementor",
+        "Preisrechner",
+        "Programmierung",
+        "Design",
+        "Umsetzung",
+        "JavaScript",
+        "JQuery"
+      ]
     },
     "wp26": {
       "logoAlt": "Unternehmen mit Strahlkraft Logo",
@@ -233,13 +264,13 @@
       "privacyRequired": "Bitte akzeptiere die Datenschutzerklärung.",
       "submitButton": "Sag Hallo ;)"
     },
-      "popup": {
-        "successTitle": "Nachricht gesendet!",
-        "errorTitle": "Fehler beim Senden",
-        "successMessage": "Deine Nachricht wurde erfolgreich übermittelt. Ich werde mich so schnell wie möglich bei dir melden. Vielen Dank!",
-        "errorMessage": "Beim Senden deiner Nachricht ist ein Fehler aufgetreten:",
-        "closeButton": "Schließen"
-      }
+    "popup": {
+      "successTitle": "Nachricht gesendet!",
+      "errorTitle": "Fehler beim Senden",
+      "successMessage": "Deine Nachricht wurde erfolgreich übermittelt. Ich werde mich so schnell wie möglich bei dir melden. Vielen Dank!",
+      "errorMessage": "Beim Senden deiner Nachricht ist ein Fehler aufgetreten:",
+      "closeButton": "Schließen"
+    }
   },
   "legalNotice": {
     "title": "Impressum",

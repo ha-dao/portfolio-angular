@@ -35,7 +35,8 @@ export class ProjectService {
   private wordpressProjectsMetadata = [
     {
       id: 'wp01',
-      logoUrl: 'assets/img/4-projects/wp-logos/Berlinerfinanzmanufaktur-Logo-BlueWhite.svg',
+      logoUrl:
+        'assets/img/4-projects/wp-logos/Berlinerfinanzmanufaktur-Logo-BlueWhite.svg',
       websiteUrl: 'https://berlinerfinanzmanufaktur.de/',
       hasWhiteBackground: false,
       isSpecificImg: false,
@@ -64,7 +65,8 @@ export class ProjectService {
     },
     {
       id: 'wp05',
-      logoUrl: 'assets/img/4-projects/wp-logos/Beerdigungsintitut-Weber-Logo.svg',
+      logoUrl:
+        'assets/img/4-projects/wp-logos/Beerdigungsintitut-Weber-Logo.svg',
       websiteUrl: 'https://beerdigungsinstitut-kaiserslautern.de/',
       hasWhiteBackground: true,
       isSpecificImg: false,
@@ -99,14 +101,16 @@ export class ProjectService {
     },
     {
       id: 'wp10',
-      logoUrl: 'assets/img/4-projects/wp-logos/IC-Individual-Cosmetics-Logo.svg',
+      logoUrl:
+        'assets/img/4-projects/wp-logos/IC-Individual-Cosmetics-Logo.svg',
       websiteUrl: 'https://individual-cosmetics.com/',
       hasWhiteBackground: true,
       isSpecificImg: false,
     },
     {
       id: 'wp11',
-      logoUrl: 'assets/img/4-projects/wp-logos/Inspektorenhaus-Logo-Querformat-gruen.svg',
+      logoUrl:
+        'assets/img/4-projects/wp-logos/Inspektorenhaus-Logo-Querformat-gruen.svg',
       websiteUrl: 'https://inspektorenhaus-dobbin.de/',
       hasWhiteBackground: true,
       isSpecificImg: false,
@@ -120,7 +124,8 @@ export class ProjectService {
     },
     {
       id: 'wp13',
-      logoUrl: 'assets/img/4-projects/wp-logos/logo-jimmy-versicherung-quer.svg',
+      logoUrl:
+        'assets/img/4-projects/wp-logos/logo-jimmy-versicherung-quer.svg',
       websiteUrl: 'https://jimmy-versicherung.de/',
       hasWhiteBackground: true,
       isSpecificImg: false,
@@ -129,6 +134,13 @@ export class ProjectService {
       id: 'wp14',
       logoUrl: 'assets/img/4-projects/wp-logos/logo-jimmy-zusatz.svg',
       websiteUrl: 'https://jimmy-zusatzversicherung.de/',
+      hasWhiteBackground: true,
+      isSpecificImg: false,
+    },
+    {
+      id: 'wp15',
+      logoUrl: 'assets/img/4-projects/wp-logos/LAC-sprint_logo.png',
+      websiteUrl: 'https://leichtathletik-mv.de/',
       hasWhiteBackground: true,
       isSpecificImg: false,
     },
@@ -155,7 +167,8 @@ export class ProjectService {
     },
     {
       id: 'wp19',
-      logoUrl: 'assets/img/4-projects/wp-logos/Nico-Dudek-Logo-black-bg-Pfad.svg',
+      logoUrl:
+        'assets/img/4-projects/wp-logos/Nico-Dudek-Logo-black-bg-Pfad.svg',
       websiteUrl: 'https://versicherungen-guestrow.de/',
       hasWhiteBackground: false,
       isSpecificImg: false,
@@ -197,14 +210,16 @@ export class ProjectService {
     },
     {
       id: 'wp25',
-      logoUrl: 'assets/img/4-projects/wp-logos/mt-mecklenburger-textildruck-logo-full.png',
+      logoUrl:
+        'assets/img/4-projects/wp-logos/mt-mecklenburger-textildruck-logo-full.png',
       websiteUrl: 'https://mecklenburger-textildruck.de/',
       hasWhiteBackground: true,
       isSpecificImg: true,
     },
     {
       id: 'wp26',
-      logoUrl: 'assets/img/4-projects/wp-logos/unternehmen-mit-strahlkraft-logo.webp',
+      logoUrl:
+        'assets/img/4-projects/wp-logos/unternehmen-mit-strahlkraft-logo.webp',
       websiteUrl: 'https://unternehmen-mit-strahlkraft.de/',
       hasWhiteBackground: false,
       isSpecificImg: true,
